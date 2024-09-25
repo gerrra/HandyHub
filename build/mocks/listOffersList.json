@@ -1,0 +1,112 @@
+[
+    {
+        "brandId": "1234",
+        "offers": [
+            {
+                "id": "91011",
+                "title": "Сведение",
+                "description": "Сведение бита / вокала",
+                "image": "mixing.jpg",
+                "gallery": ["mixing.jpg", "mastering.jpg", "arrangement.jpg"],
+                "price": 120,
+                "unitOfMeasurement": "шт.",
+                "optionsTitle": "Количество дорожек",
+                "options": [
+                    {
+                        "title": "15 дорожек",
+                        "description": "Бит состоит из не более чем 15 дорожек, включая саунд эффекты и драм партию"
+                    },
+                    {
+                        "title": "30 дорожек",
+                        "description": "Бит состоит из не более чем 30 дорожек, включая саунд эффекты и драм партию",
+                        "additionalPrice": 120
+                    }
+                ]
+            },
+            {
+                "id": "12131",
+                "title": "Мастеринг",
+                "description": "Мастеринг композиции",
+                "unitOfMeasurement": "шт.",
+                "gallery": ["mixing.jpg", "mastering.jpg", "arrangement.jpg"],
+                "image": "mastering.jpg",
+                "price": 256
+            },
+            {
+                "id": "41516",
+                "title": "Аранжировка",
+                "description": "Музыка по вашему запросу",
+                "unitOfMeasurement": "шт.",
+                "gallery": ["mixing.jpg", "mastering.jpg", "arrangement.jpg"],
+                "image": "arrangement.jpg",
+                "price": 600
+            }
+        ]
+    },
+    {
+        "brandId": "5678",
+        "offers": [
+            {
+                "id": "17181",
+                "title": "Pelmeni",
+                "description": "Pelmeni homemade",
+                "image": "dumplings1.jpg",
+                "gallery": ["dumplings2.jpg", "pancakes.jpg", "dumplings1.jpg"],
+                "price": 50,
+                "unitOfMeasurement": "lb",
+                "optionsTitle": "Filling",
+                "options": [
+                    {
+                        "title": "Chicken",
+                        "description": "Pelmeni with chicken filling"
+                    },
+                    {
+                        "title": "Pork/beef",
+                        "description": "Pelmeni with pork and beef filling",
+                        "additionalPrice": 20
+                    }
+                ]
+            },
+            {
+                "id": "92021",
+                "title": "Vareniky",
+                "description": "Vareniky",
+                "image": "dumplings2.jpg",
+                "gallery": ["dumplings2.jpg", "pancakes.jpg", "dumplings1.jpg"],
+                "price": 60,
+                "unitOfMeasurement": "lb",
+                "optionsTitle": "Filling",
+                "options": [
+                    {
+                        "title": "Kartoch",
+                        "description": "Vareniky with potato and onion filling"
+                    },
+                    {
+                        "title": "Cabbage",
+                        "description": "Vareniky with cabbage filling"
+                    }
+                ]
+            },
+            {
+                "id": "22232",
+                "title": "Stuffed pancakes",
+                "description": "Stuffed pancakes with sausage and cheese / cottage cheese",
+                "image": "pancakes.jpg",
+                "gallery": ["dumplings2.jpg", "pancakes.jpg", "dumplings1.jpg"],
+                "price": 100,
+                "unitOfMeasurement": "lb",
+                "optionsTitle": "Filling",
+                "options": [
+                    {
+                        "title": "Cottage cheese",
+                        "description": "Stuffed pancakes with cottage cheese filling"
+                    },
+                    {
+                        "title": "Sausage/cheese",
+                        "description": "Stuffed pancakes with grated sausage and cheese filling"
+                    }
+                ]
+            }
+        ]
+    }
+]

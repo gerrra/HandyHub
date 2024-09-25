@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5ce98ad0.css",
+    "main.js": "/static/js/main.a962e9d2.js",
+    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "static/media/mainBackgound.jpg": "/static/media/mainBackgound.90ed0ddf0675b7e6837c.jpg",
+    "static/media/handyHubLogo.svg": "/static/media/handyHubLogo.06dfeb05c53e1d83916d40d755bcbaf1.svg",
+    "static/media/handyHubLogoMin.svg": "/static/media/handyHubLogoMin.fe865fe968bd5a3ccfea124e3727649c.svg",
+    "static/media/home.svg": "/static/media/home.dc61db3496b08df0d36c0095db0000dc.svg",
+    "static/media/viber.svg": "/static/media/viber.f1b8b8a06cc81a336979a85bc0231de3.svg",
+    "static/media/whatsapp.svg": "/static/media/whatsapp.8ad6e18e5a015df27d67fb4fe31f8f39.svg",
+    "static/media/telegram.svg": "/static/media/telegram.d5b2cba7792c69a23691b691c1133c8f.svg",
+    "static/media/close.svg": "/static/media/close.58835bafe6964ab9d4cbe6c694c182ef.svg",
+    "index.html": "/index.html",
+    "static/media/search.svg": "/static/media/search.a90751fc4ce9801d2b07235db8f4b09c.svg",
+    "static/media/heart.svg": "/static/media/heart.3ca8c798ee269886322d14c9563d1d89.svg",
+    "static/media/imessage.svg": "/static/media/imessage.56fc1db754092a9b2b29b6f5ff42d3e5.svg",
+    "static/media/arrow-left.svg": "/static/media/arrow-left.f2a5e7a7a1a7a3d2eea1a992bd46e24f.svg",
+    "static/media/plus.svg": "/static/media/plus.de23c845a28aaa8d1ac0d89ed8a4b8db.svg",
+    "static/media/minus.svg": "/static/media/minus.7a9911935057546a354eb19b2e892b8f.svg",
+    "main.5ce98ad0.css.map": "/static/css/main.5ce98ad0.css.map",
+    "main.a962e9d2.js.map": "/static/js/main.a962e9d2.js.map",
+    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ce98ad0.css",
+    "static/js/main.a962e9d2.js"
+  ]
+}

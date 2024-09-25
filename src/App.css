@@ -1,0 +1,14 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #3a3a3a;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}

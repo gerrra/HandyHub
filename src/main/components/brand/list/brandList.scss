@@ -1,0 +1,10 @@
+.brand-list {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 18px 0;
+
+    @media (max-width: 640px) {
+        width: 100%;
+    }
+}
