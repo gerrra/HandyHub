@@ -107,7 +107,7 @@ export const BrandView = () => {
                                                 </div>
                                             </div>
                                         ),
-                                        link: `${Links.BRAND}/${offer.parentId}${Links.OFFER}/${offer.id}`,
+                                        link: `/#${Links.BRAND}/${offer.parentId}${Links.OFFER}/${offer.id}`,
                                         backgroundImage: offer.image ?? '',
                                     }))
                                 ]}
