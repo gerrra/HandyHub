@@ -4,18 +4,28 @@ import { SliderProps } from '../../types/sliderProps';
 import { SliderItemType } from '../../types/sliderItemProps';
 import classnames from 'classnames';
 import { ReactComponent as ArrowLeft } from '../../icons/arrow-left.svg';
+import { useResizeObserver } from '../../service/globalService';
 
 export const Slider = (props: SliderProps) => {
     const [slides, setSlides] = useState<SliderItemType[]>([]);
     const [touchStartXLocation, setTouchStartXLocation] = useState<number>(0);
     const [touchMoveXLocation, setTouchMoveXLocation] = useState<number>(0);
+    const [sliderWrapWidth, setSliderWrapWidth] = useState<number>(0);
     let sliderWrapRef = useRef<HTMLDivElement>(null);
-    const slideWidth: number = props.slideWidth ?? 250;
-    const slideHeight: number = props.slideHeight ?? 250;
-    const slideMarginRight: number = props.slideMarginRight ?? 24;
-    const slideMarginLeft: number = props.slideMarginLeft ?? 24;
-    const selectedSlideWidth: number = props.selectedSlideWidth ?? 450;
-    const selectedSlideHeight: number = props.selectedSlideHeight ?? 450;
+
+    const defaultSlideWidth: number = 250;
+    const defaultSlideHeight: number = 250;
+    const defaultSlideMarginRight: number = 24;
+    const defaultSlideMarginLeft: number = 24;
+    const defaultSelectedSlideWidth: number = 450;
+    const defaultSelectedSlideHeight: number = 450;
+
+    const slideWidth: number = props.slideWidth ?? defaultSlideWidth;
+    const slideHeight: number = props.slideHeight ?? defaultSlideHeight;
+    const slideMarginRight: number = props.slideMarginRight ?? defaultSlideMarginRight;
+    const slideMarginLeft: number = props.slideMarginLeft ?? defaultSlideMarginLeft;
+    const selectedSlideWidth: number = props.selectedSlideWidth ?? defaultSelectedSlideWidth;
+    const selectedSlideHeight: number = props.selectedSlideHeight ?? defaultSelectedSlideHeight;
 
     const getSelectedSlideIndex = useMemo(
         () => slides.findIndex((el) => el.selected),
@@ -75,15 +85,15 @@ export const Slider = (props: SliderProps) => {
 
     const sliderListWrapStyles: React.CSSProperties = useMemo(
         (): React.CSSProperties => {
-            const left: number = !!sliderWrapRef.current
-                ? (sliderWrapRef.current.clientWidth / 2) - (selectedSlideWidth / 2)
+            const left: number = !!sliderWrapWidth
+                ? (sliderWrapWidth / 2) - (selectedSlideWidth / 2)
                 : 0;
 
             return {
                 left: left - ((slideWidth + slideMarginRight + slideMarginLeft) * getSelectedSlideIndex),
             };
         },
-        [getSelectedSlideIndex, selectedSlideWidth, slideWidth, slideMarginRight, slideMarginLeft],
+        [getSelectedSlideIndex, selectedSlideWidth, slideWidth, slideMarginRight, slideMarginLeft, sliderWrapWidth],
     );
 
     const slideStyles = useCallback(
@@ -172,6 +182,8 @@ export const Slider = (props: SliderProps) => {
         },
         [touchStartXLocation, touchMoveXLocation, updateSelectedSlideByIndex, getSelectedSlideIndex, props.swipeOff],
     );
+
+    useResizeObserver(sliderWrapRef, (target) => setSliderWrapWidth(target.clientWidth));
 
     return (
         <div

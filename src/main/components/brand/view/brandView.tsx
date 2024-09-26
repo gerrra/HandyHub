@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './brandView.scss';
 import { useParams } from 'react-router-dom';
 import { Brand } from '../../../models/brand';
@@ -6,11 +6,18 @@ import { getBrand, getOffersList } from '../../../actions/mainActions';
 import { Slider } from '../../../../global/components/slider/slider';
 import { Offer } from '../../../models/offer';
 import { Links } from '../../../../global/emuns/links';
+import { useMutationObserver } from '../../../../global/service/globalService';
+import { maxWidth400, maxWidth640, maxWidth900 } from '../../../../global/service/windowWidth';
 
 export const BrandView = () => {
-    const { id } = useParams()
-    const [item, setItem] = useState<Brand | null>(null)
-    const [offers, setOffers] = useState<Offer[]>([])
+    const { id } = useParams();
+    const [item, setItem] = useState<Brand | null>(null);
+    const [offers, setOffers] = useState<Offer[]>([]);
+    const [contentSliderWrap, setContentSliderWrap] = useState<HTMLDivElement | null>(null);
+    const contentSliderWrapRef = useRef<HTMLDivElement>(null);
+    const contentSliderWrapPaddingFull = 24;
+    const contentSliderWrapPadding640 = 18;
+    const contentSliderWrapPadding400 = 12;
 
     useEffect(
         () => {
@@ -27,15 +34,41 @@ export const BrandView = () => {
         [item?.image],
     );
 
-    const widthMin900: boolean = useMemo(
-        () => window.innerWidth <= 900,
+    const getContentSlideWrapPadding = useMemo(
+        () => maxWidth400
+            ? contentSliderWrapPadding400
+            : maxWidth640
+                ? contentSliderWrapPadding640
+                : contentSliderWrapPaddingFull,
         [],
     );
 
-    const widthMin800: boolean = useMemo(
-        () => window.innerWidth <= 800,
-        [],
+    const contentSliderWrapStyles: React.CSSProperties = useMemo(
+        () => ({
+            padding: getContentSlideWrapPadding,
+        }),
+        [getContentSlideWrapPadding],
     );
+
+    const slideWidth: number | undefined = useMemo(
+        () => {
+            if (contentSliderWrap) {
+                return contentSliderWrap.clientWidth - (getContentSlideWrapPadding * 2);
+            }
+        },
+        [contentSliderWrap, getContentSlideWrapPadding],
+    );
+
+    const slideHeight: number | undefined = useMemo(
+        () => {
+            if (contentSliderWrap) {
+                return contentSliderWrap.clientHeight / 100 * 75;
+            }
+        },
+        [contentSliderWrap],
+    );
+
+    useMutationObserver(contentSliderWrapRef, () => setContentSliderWrap(contentSliderWrapRef.current), { childList: true, subtree: true });
 
     return (
         !!item && 
@@ -75,18 +108,21 @@ export const BrandView = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='brand-view__content-slider-wrap'>
+                    <div
+                        className='brand-view__content-slider-wrap'
+                        style={contentSliderWrapStyles}
+                        ref={contentSliderWrapRef}
+                    >
                         <h2 className='brand-view__content-body-slider-title'>
                             Offers:
                         </h2>
                         <div className='brand-view__content-slider'>
                             <Slider
-                                selectedSlideWidth={widthMin800 ? 300 : widthMin800 ? 400 : undefined}
-                                selectedSlideHeight={widthMin800 ? 300 : widthMin800 ? 400 : undefined}
-                                slideWidth={widthMin800 ? 150 : widthMin800 ? 200 : undefined}
-                                slideHeight={widthMin800 ? 150 : widthMin800 ? 200 : undefined}
-                                hideArrows={widthMin900}
-                                hideDots={widthMin900}
+                                offAutoSlide
+                                selectedSlideWidth={slideWidth}
+                                selectedSlideHeight={maxWidth640 ? 300 : maxWidth900 ? 400 : slideHeight}
+                                hideArrows={maxWidth900}
+                                hideDots={maxWidth900}
                                 slides={[
                                     ...offers.map((offer: Offer, index: number) => ({
                                         component: (
@@ -94,9 +130,9 @@ export const BrandView = () => {
                                                 key={index}
                                                 className='brand-view__slide-content'
                                             >
-                                                <h3 className='brand-view__slide-title'>
+                                                <h2 className='brand-view__slide-title'>
                                                     {offer.title}
-                                                </h3>
+                                                </h2>
                                                 <div className='brand-view__slide-description'>
                                                     <div className='brand-view__slide-description-text'>
                                                         {offer.description}

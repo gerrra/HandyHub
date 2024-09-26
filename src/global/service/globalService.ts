@@ -55,3 +55,24 @@ export const useLatest = (value: any): React.MutableRefObject<any> => {
 
     return valueRef;
 };
+
+
+export const useResizeObserver = (
+    ref: React.MutableRefObject<any>,
+    cb: (ref: any) => any,
+) => {
+    const latestCb = useLatest(cb);
+
+    useEffect(
+        () => {
+            const resizeObserver = new ResizeObserver(([{ target }]) => {
+                latestCb.current(target)
+            });
+
+            if (ref.current) {
+                resizeObserver.observe(ref.current)
+            }
+        },
+        [latestCb, ref],
+    );
+}

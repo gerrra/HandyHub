@@ -12,5 +12,61 @@
         "brandDescription": "Home cooking, approach with soul. Order for a month, and eat deliciously!",
         "offersDescription": "We use only natural products. One standard portion weighs 4.5 lb. The portion is frozen and sent to you in special packaging that will not allow the product to defrost.",
         "image": "logoHomeBites.jpg"
+    },
+    {
+        "id": "1234",
+        "title": "GerraBit",
+        "brandDescription": "Написание битов, сведение, мастеринг песен.",
+        "offersDescription": "Профессиональное студийное звучание, лучшее качество, разнообразие стилей и направлений.",
+        "image": "logoGerra.jpg"
+    },
+    {
+        "id": "5678",
+        "title": "HomeBites",
+        "brandDescription": "Home cooking, approach with soul. Order for a month, and eat deliciously!",
+        "offersDescription": "We use only natural products. One standard portion weighs 4.5 lb. The portion is frozen and sent to you in special packaging that will not allow the product to defrost.",
+        "image": "logoHomeBites.jpg"
+    },
+    {
+        "id": "1234",
+        "title": "GerraBit",
+        "brandDescription": "Написание битов, сведение, мастеринг песен.",
+        "offersDescription": "Профессиональное студийное звучание, лучшее качество, разнообразие стилей и направлений.",
+        "image": "logoGerra.jpg"
+    },
+    {
+        "id": "5678",
+        "title": "HomeBites",
+        "brandDescription": "Home cooking, approach with soul. Order for a month, and eat deliciously!",
+        "offersDescription": "We use only natural products. One standard portion weighs 4.5 lb. The portion is frozen and sent to you in special packaging that will not allow the product to defrost.",
+        "image": "logoHomeBites.jpg"
+    },
+    {
+        "id": "1234",
+        "title": "GerraBit",
+        "brandDescription": "Написание битов, сведение, мастеринг песен.",
+        "offersDescription": "Профессиональное студийное звучание, лучшее качество, разнообразие стилей и направлений.",
+        "image": "logoGerra.jpg"
+    },
+    {
+        "id": "5678",
+        "title": "HomeBites",
+        "brandDescription": "Home cooking, approach with soul. Order for a month, and eat deliciously!",
+        "offersDescription": "We use only natural products. One standard portion weighs 4.5 lb. The portion is frozen and sent to you in special packaging that will not allow the product to defrost.",
+        "image": "logoHomeBites.jpg"
+    },
+    {
+        "id": "1234",
+        "title": "GerraBit",
+        "brandDescription": "Написание битов, сведение, мастеринг песен.",
+        "offersDescription": "Профессиональное студийное звучание, лучшее качество, разнообразие стилей и направлений.",
+        "image": "logoGerra.jpg"
+    },
+    {
+        "id": "5678",
+        "title": "HomeBites",
+        "brandDescription": "Home cooking, approach with soul. Order for a month, and eat deliciously!",
+        "offersDescription": "We use only natural products. One standard portion weighs 4.5 lb. The portion is frozen and sent to you in special packaging that will not allow the product to defrost.",
+        "image": "logoHomeBites.jpg"
     }
 ]

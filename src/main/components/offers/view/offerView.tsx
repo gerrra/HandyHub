@@ -19,6 +19,7 @@ import { Slider } from '../../../../global/components/slider/slider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useMutationObserver } from '../../../../global/service/globalService';
+import { maxWidth640 } from '../../../../global/service/windowWidth';
 
 export const OfferView = () => {
     const { brandId, offerId } = useParams()
@@ -161,17 +162,12 @@ export const OfferView = () => {
         [price],
     );
 
-    const maxWidth570: boolean = useMemo(
-        () => window.innerWidth <= 570,
-        [],
-    );
-
     const selectSocialNetworkStyles = useMemo(
         (): React.CSSProperties => ({
             opacity: !!selectSocialNetworkOn ? 1 : 0,
             top: !!selectSocialNetworkOn ? 0 : '-100%',
-            // top: selectSocialNetworkOn ? 0 : maxWidth570 ? 'auto' : '-100%',
-            // bottom:  maxWidth570 && !selectSocialNetworkOn ? '-100%' : 'auto',
+            // top: selectSocialNetworkOn ? 0 : maxWidth640 ? 'auto' : '-100%',
+            // bottom:  maxWidth640 && !selectSocialNetworkOn ? '-100%' : 'auto',
         }),
         [selectSocialNetworkOn],
     );
@@ -275,6 +271,16 @@ export const OfferView = () => {
         [sliderWrap],
     );
 
+    const offerGallerySlideWidth: number | undefined = useMemo(
+        () => sliderWrap?.clientWidth,
+        [sliderWrap?.clientWidth],
+    );
+
+    const offerGallerySlideHeight: number | undefined = useMemo(
+        () => sliderWrap?.clientHeight,
+        [sliderWrap?.clientHeight],
+    );
+
     return (
         !!offer && !!brand && 
         <div className="offer-view">
@@ -296,8 +302,10 @@ export const OfferView = () => {
                             : (
                                 <>
                                     <Link
+                                        className='offer-view__brand-title-wrap'
                                         to={`${Links.BRAND}/${brand.id}`}
                                     >
+                                        <Arrow className='offer-view__brand-title-arrow'/>
                                         <div className='offer-view__brand-title'>
                                             {
                                                 brand.title ?? ''
@@ -537,12 +545,12 @@ export const OfferView = () => {
                                             className='offer-view__offer-gallery'
                                         >
                                             <Slider
-                                                hideArrows={maxWidth570}
-                                                selectedSlideWidth={sliderWrap?.clientWidth}
-                                                selectedSlideHeight={sliderWrap?.clientHeight}
-                                                slideWidth={sliderWrap?.clientWidth}
+                                                hideArrows={maxWidth640}
+                                                selectedSlideWidth={offerGallerySlideWidth}
+                                                selectedSlideHeight={offerGallerySlideHeight}
+                                                slideWidth={offerGallerySlideWidth}
+                                                slideHeight={offerGallerySlideHeight}
                                                 offAutoSlide={!selectedGallery}
-                                                slideHeight={sliderWrap?.clientHeight}
                                                 slides={[...offer.gallery.map((image: string, index: number) => ({
                                                     component: <></>,
                                                     backgroundImage: image,

@@ -1,6 +1,6 @@
 .main-template {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: row;
 
@@ -35,7 +35,7 @@
         background-position: center;
 
         &--with-header {
-            max-height: calc(100vh - 68.5px);
+            max-height: calc(100dvh - 68.5px);
         }
     }
 }

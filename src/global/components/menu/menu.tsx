@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { Links } from "../../emuns/links";
 import { MenuProps } from "../../types/menuProps";
 import classnames from "classnames";
+import { maxWidth900 } from "../../service/windowWidth";
 
 export const Menu = (props: MenuProps) => {
     const [mainItems, setMainItems] =  useState<MenuMainItems[]>([
@@ -56,11 +57,6 @@ export const Menu = (props: MenuProps) => {
             const IconName = icon;
             return <IconName />;
         },
-        [],
-    );
-
-    const widthMin900: boolean = useMemo(
-        () => window.innerWidth <= 900,
         [],
     );
 
@@ -118,7 +114,7 @@ export const Menu = (props: MenuProps) => {
                                 {getMenuItemIcon(item.icon)}
                             </div>
                             {
-                                !widthMin900 && !props.collapse &&
+                                !maxWidth900 && !props.collapse &&
                                 <div className="menu__main-item-title">
                                     {item.title}
                                 </div>

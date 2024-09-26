@@ -15,14 +15,6 @@ export const BrandListItem = (props: BrandItemProps) => {
         [props.item.id],
     );
 
-    // const goToTheViewPage = useCallback(
-    //     () => {
-    //         setSelectedItem(true);
-    //         setTimeout(() => window.location.assign(brandItemLink), 0);
-    //     },
-    //     [brandItemLink],
-    // );
-
     return (
         <div
             className={'brand-list-item__wrap'}
