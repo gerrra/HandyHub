@@ -1,11 +1,10 @@
 body {
     height: 100dvh;
-    overflow: hidden;
     background-color: #3a3a3a;
-}
 
-::-webkit-scrollbar {
-    width: 0;
+    @media (max-width: 900px) {
+        height: auto;
+    }
 }
 
 a {

@@ -6,6 +6,7 @@ export const OfferViewPage = () => {
         <MainTemplate
             collapseMenu
             content={<OfferView />}
+            fullHeight
         />
     );
 };

@@ -10,16 +10,12 @@ import { ReactComponent as Minus } from '../../../../global/icons/minus.svg';
 import { ReactComponent as Plus } from '../../../../global/icons/plus.svg';
 import { ReactComponent as Arrow } from '../../../../global/icons/arrow-left.svg';
 import { ReactComponent as Close } from '../../../../global/icons/close.svg';
-import { ReactComponent as Telegram } from '../../../../global/icons/telegram.svg';
-import { ReactComponent as Whatsapp } from '../../../../global/icons/whatsapp.svg';
-import { ReactComponent as Viber } from '../../../../global/icons/viber.svg';
-import { ReactComponent as Imessage } from '../../../../global/icons/imessage.svg';
 import classnames from 'classnames';
 import { Slider } from '../../../../global/components/slider/slider';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useMutationObserver } from '../../../../global/service/globalService';
 import { maxWidth640 } from '../../../../global/service/windowWidth';
+import { SelectSocialNetwork } from '../../../../global/components/selectSocialNetwork/selectSocialNetwork';
 
 export const OfferView = () => {
     const { brandId, offerId } = useParams()
@@ -162,16 +158,6 @@ export const OfferView = () => {
         [price],
     );
 
-    const selectSocialNetworkStyles = useMemo(
-        (): React.CSSProperties => ({
-            opacity: !!selectSocialNetworkOn ? 1 : 0,
-            top: !!selectSocialNetworkOn ? 0 : '-100%',
-            // top: selectSocialNetworkOn ? 0 : maxWidth640 ? 'auto' : '-100%',
-            // bottom:  maxWidth640 && !selectSocialNetworkOn ? '-100%' : 'auto',
-        }),
-        [selectSocialNetworkOn],
-    );
-
     const openGallery = useCallback(
         () => {
             setSelectedContent(false);
@@ -193,73 +179,6 @@ export const OfferView = () => {
         [totalCount, offer, price],
     );
 
-    const linkForOrder = useMemo(
-        (): string => {
-            if (!offer || !price) return '';
-
-            let options: string = '';
-            offerOptions.forEach((v) => {
-                if (!!v.count) {
-                    options += ` ${offer.optionsTitle}: ${v.title} ${v.count}${offer.unitOfMeasurement}.`
-                }
-            });
-            return `Hello! I want to order ${offer.title}.${options} Price: $${price}`;
-        },
-        [offer, price, offerOptions],
-    )
-
-    const selectTelegramNetwork = useCallback(
-        () => {
-            if (!linkForOrder) return;
-
-            window.location.href = `https://t.me/grsm_v_ch?text=${linkForOrder}`;
-        },
-        [linkForOrder],
-    );
-
-    const selectWhatsappNetwork = useCallback(
-        () => {
-            if (!linkForOrder) return;
-
-            window.location.href = `https://wa.me/+12532824884?text=${linkForOrder}`;
-        },
-        [linkForOrder],
-    );
-
-    const selectViberNetwork = useCallback(
-        () => {
-            if (!linkForOrder) return;
-
-            navigator.clipboard.writeText(linkForOrder)
-                .then(() => {
-                    toast("Your order message has been copied to your clipboard. You can paste it into the chat.")
-                    setTimeout(() => (window.location.href = 'viber://pa?chatURI=+2533243648'), 3000);
-                })
-                .catch(err => {
-                    console.log('Something went wrong', err);
-                });
-            
-        },
-        [linkForOrder],
-    );
-
-    const selectIMessageNetwork = useCallback(
-        () => {
-            if (!linkForOrder) return;
-
-            navigator.clipboard.writeText(linkForOrder)
-                .then(() => {
-                    toast("Your order message has been copied to your clipboard. You can paste it into the chat.")
-                    setTimeout(() => (window.location.href = 'imessage://+12532824884'), 3000);
-                })
-                .catch(err => {
-                    console.log('Something went wrong', err);
-                });
-            
-        },
-        [linkForOrder],
-    );
-
     useMutationObserver(sliderWrapRef, () => setSliderWrap(sliderWrapRef.current), { childList: true, subtree: true });
 
     useMutationObserver(sliderWrapRef, () => setTimeout(() => setOptionContent(optionContentRef.current), 300), { childList: true, subtree: true });
@@ -269,6 +188,27 @@ export const OfferView = () => {
             opacity: !sliderWrap ? 0 : 1,
         }),
         [sliderWrap],
+    );
+
+    const contentStyles = useMemo(
+        (): React.CSSProperties => ({
+            opacity: maxWidth640 && selectSocialNetworkOn ? 0 : 1,
+        }),
+        [selectSocialNetworkOn],
+    );
+
+    const contentOrderPriceStyles = useMemo(
+        (): React.CSSProperties => ({
+            opacity: selectSocialNetworkOn ? 0 : 1,
+        }),
+        [selectSocialNetworkOn],
+    );
+
+    const contentOptionsWrapStyles = useMemo(
+        (): React.CSSProperties => ({
+            opacity: selectSocialNetworkOn ? 0 : 1,
+        }),
+        [selectSocialNetworkOn],
     );
 
     const offerGallerySlideWidth: number | undefined = useMemo(
@@ -328,6 +268,17 @@ export const OfferView = () => {
                         ref={sliderWrapRef}
                         style={slideWrapStyles}
                     >
+                        {
+                            maxWidth640 &&
+                            <SelectSocialNetwork
+                                offer={offer}
+                                offerOptions={offerOptions}
+                                price={price}
+                                toggleComponent={setSelectSocialNetworkOn}
+                                totalPrice={totalPrice}
+                                componentOn={selectSocialNetworkOn}
+                            />
+                        }
                         <Slider
                             hideArrows
                             hideDots
@@ -341,8 +292,13 @@ export const OfferView = () => {
                                 {
                                     selected: selectedContent,
                                     component: (
-                                        <div className='offer-view__content'>
-                                            <div className='offer-view__content-wrap'>
+                                        <div
+                                            className='offer-view__content'
+                                            style={contentStyles}
+                                        >
+                                            <div
+                                                className='offer-view__content-wrap'
+                                            >
                                                 <div className='offer-view__content-block offer-view__content-title-wrap'>
                                                     <h1 className='offer-view__content-title'>
                                                         {
@@ -381,6 +337,7 @@ export const OfferView = () => {
                                                     !!offer.options.length &&
                                                     <div
                                                         className='offer-view__content-options-wrap'
+                                                        style={contentOptionsWrapStyles}
                                                     >
                                                         {
                                                             !!offer.optionsTitle &&
@@ -442,7 +399,10 @@ export const OfferView = () => {
                                                         }
                                                     </div>
                                                 }
-                                                <div className='offer-view__content-order-price'>
+                                                <div
+                                                    className='offer-view__content-order-price'
+                                                    style={contentOrderPriceStyles}
+                                                >
                                                     <div
                                                         className='offer-view__content-order-total-count'
                                                         style={orderTotalCountStyles}
@@ -456,84 +416,17 @@ export const OfferView = () => {
                                                         Order
                                                     </div>
                                                 </div>
-                                                <div
-                                                    className='offer-view__content-select-social-network'
-                                                    style={selectSocialNetworkStyles}
-                                                >
-                                                    <div
-                                                        className='offer-view__content-social-network-header'
-                                                    >
-                                                        <h3
-                                                            className='offer-view__content-social-network-header-title'
-                                                        >
-                                                            Select a method of communication
-                                                        </h3>
-                                                        <Close
-                                                            className='offer-view__content-social-network-close-icon'
-                                                            onClick={() => setSelectSocialNetworkOn(false)}
-                                                        />
-                                                    </div>
-                                                    <div
-                                                        className='offer-view__content-social-network-item'
-                                                    >
-                                                        {totalPrice}
-                                                    </div>
-                                                    <div
-                                                        className='
-                                                            offer-view__content-social-network-item
-                                                            offer-view__content-social-network
-                                                            offer-view__content-social-network--telegram
-                                                        '
-                                                        onClick={selectTelegramNetwork}
-                                                    >
-                                                        <h4 className='offer-view__content-social-network-title'>
-                                                            Telegram
-                                                        </h4>
-                                                        <Telegram />
-                                                    </div>
-                                                    <div
-                                                        
-                                                        className='
-                                                            offer-view__content-social-network-item
-                                                            offer-view__content-social-network
-                                                            offer-view__content-social-network--whatsapp
-                                                        '
-                                                        onClick={selectWhatsappNetwork}
-                                                    >
-                                                        <h4 className='offer-view__content-social-network-title'>
-                                                            WhatsApp
-                                                        </h4>
-                                                        <Whatsapp />
-                                                    </div>
-                                                    <div
-                                                        
-                                                        className='
-                                                            offer-view__content-social-network-item
-                                                            offer-view__content-social-network
-                                                            offer-view__content-social-network--viber
-                                                        '
-                                                        onClick={selectViberNetwork}
-                                                    >
-                                                        <h4 className='offer-view__content-social-network-title'>
-                                                            Viber
-                                                        </h4>
-                                                        <Viber />
-                                                    </div>
-                                                    <div
-                                                        
-                                                        className='
-                                                            offer-view__content-social-network-item
-                                                            offer-view__content-social-network
-                                                            offer-view__content-social-network--imessage
-                                                        '
-                                                        onClick={selectIMessageNetwork}
-                                                    >
-                                                        <h4 className='offer-view__content-social-network-title'>
-                                                            IMessage
-                                                        </h4>
-                                                        <Imessage />
-                                                    </div>
-                                                </div>
+                                                {
+                                                    !maxWidth640 &&
+                                                    <SelectSocialNetwork
+                                                        offer={offer}
+                                                        offerOptions={offerOptions}
+                                                        price={price}
+                                                        toggleComponent={setSelectSocialNetworkOn}
+                                                        totalPrice={totalPrice}
+                                                        componentOn={selectSocialNetworkOn}
+                                                    />
+                                                }
                                             </div>
                                         </div>
                                     ),
@@ -569,7 +462,6 @@ export const OfferView = () => {
                     />
                 </div>
             </div>
-            <ToastContainer />
         </div>
     );
 };

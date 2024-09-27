@@ -6,6 +6,7 @@ export const PageNotFound = () => {
         <MainTemplate
             collapseMenu
             content={<PageNotFoundContent />}
+            fullHeight
         />
     )
 }

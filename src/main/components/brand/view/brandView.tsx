@@ -7,7 +7,7 @@ import { Slider } from '../../../../global/components/slider/slider';
 import { Offer } from '../../../models/offer';
 import { Links } from '../../../../global/emuns/links';
 import { useMutationObserver } from '../../../../global/service/globalService';
-import { maxWidth400, maxWidth640, maxWidth900 } from '../../../../global/service/windowWidth';
+import { maxWidth640, maxWidth900 } from '../../../../global/service/windowWidth';
 
 export const BrandView = () => {
     const { id } = useParams();
@@ -16,8 +16,8 @@ export const BrandView = () => {
     const [contentSliderWrap, setContentSliderWrap] = useState<HTMLDivElement | null>(null);
     const contentSliderWrapRef = useRef<HTMLDivElement>(null);
     const contentSliderWrapPaddingFull = 24;
-    const contentSliderWrapPadding640 = 18;
-    const contentSliderWrapPadding400 = 12;
+    const contentSliderWrapPadding900 = 18;
+    const contentSliderWrapPadding640 = 12;
 
     useEffect(
         () => {
@@ -35,10 +35,10 @@ export const BrandView = () => {
     );
 
     const getContentSlideWrapPadding = useMemo(
-        () => maxWidth400
-            ? contentSliderWrapPadding400
-            : maxWidth640
-                ? contentSliderWrapPadding640
+        () => maxWidth640
+            ? contentSliderWrapPadding640
+            : maxWidth900
+                ? contentSliderWrapPadding900
                 : contentSliderWrapPaddingFull,
         [],
     );

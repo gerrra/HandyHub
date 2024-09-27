@@ -172,10 +172,11 @@ export const Slider = (props: SliderProps) => {
     const handleTouchEnd = useCallback(
         () => {
             if (props.swipeOff || !touchMoveXLocation) return;
-            if (touchStartXLocation > touchMoveXLocation) {
+            console.log({ touchStartXLocation, touchMoveXLocation });
+            if (touchStartXLocation - 40 > touchMoveXLocation) {
                 updateSelectedSlideByIndex(getSelectedSlideIndex + 1);
             }
-            if (touchStartXLocation < touchMoveXLocation) {
+            if (touchStartXLocation + 40 < touchMoveXLocation) {
                 updateSelectedSlideByIndex(getSelectedSlideIndex - 1);
             }
             setTouchMoveXLocation(0);

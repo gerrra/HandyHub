@@ -1,0 +1,109 @@
+.content-select-social-network {
+    position: absolute;
+    transition: all 0.3s;
+    left: 0;
+    width: calc(100% - 48px);
+    height: calc(100% - 48px);
+    background-color: rgb(103, 102, 102);;
+    padding: 24px;
+    z-index: 2;
+    border-radius: 6px;
+
+    &__header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        @media (max-width: 900px) {
+            margin-bottom: 18px;
+        }
+    }
+
+    &__header-title {
+        margin: 0 12px 0 0;
+    }
+
+    &__close-icon {
+        cursor: pointer;
+        transition: all 0.3s;
+
+        line {
+            stroke: #a4a4a4;
+            transition: all 0.3s;
+        }
+
+        &:hover {
+            line {
+                stroke: #fff;
+            }
+        }
+    }
+
+    &__item {
+        margin-bottom: 24px;
+
+        @media (max-width: 900px) {
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 640px) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__link {
+        padding: 12px;
+        width: calc(100% - 24px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 12px;
+        cursor: pointer;
+
+        &--telegram {
+            transition: all 0.3s;
+            background-color: #53a8c759;
+
+            &:hover {
+                background-color: #53a8c7cf;
+            }
+        }
+
+        &--whatsapp {
+            transition: all 0.3s;
+            background-color: rgb(112 179 97 / 26%);
+
+            &:hover {
+                background-color: rgb(112 179 97 / 58%);
+            }
+        }
+
+        &--viber {
+            transition: all 0.3s;
+            background-color: rgb(128 93 152 / 40%);
+
+            svg {
+                width: 48px;
+                height: 48px;
+            }
+
+            &:hover {
+                background-color: rgb(128 93 152);
+            }
+        }
+
+        &--imessage {
+            transition: all 0.3s;
+            background-color: rgb(71 229 53 / 20%);
+
+            &:hover {
+                background-color: rgb(71 229 53 / 50%);
+            }
+        }
+    }
+
+    &__link-title {
+        margin: 0;
+    }
+}
