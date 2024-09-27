@@ -5,9 +5,18 @@
     width: calc(100% - 48px);
     height: calc(100% - 48px);
     background-color: rgb(103, 102, 102);;
-    padding: 24px;
     z-index: 2;
     border-radius: 6px;
+
+    @media (max-width: 900px) {
+        width: calc(100% - 36px);
+        height: calc(100% - 36px);
+    }
+
+    @media (max-width: 640px) {
+        width: calc(100% - 24px);
+        height: calc(100% - 24px);
+    }
 
     &__header {
         display: flex;
@@ -50,6 +59,10 @@
         @media (max-width: 640px) {
             margin-bottom: 12px;
         }
+    }
+
+    &__links-wrap {
+        overflow: auto;
     }
 
     &__link {

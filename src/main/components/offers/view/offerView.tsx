@@ -27,9 +27,9 @@ export const OfferView = () => {
     const [sliderWrap, setSliderWrap] = useState<HTMLDivElement | null>(null);
     const [optionContent, setOptionContent] = useState<HTMLDivElement | null>(null);
     const [selectSocialNetworkOn, setSelectSocialNetworkOn] = useState<boolean>(false);
-    let optionDescriptionRef = useRef<HTMLDivElement>(null);
-    let optionContentRef = useRef<HTMLDivElement>(null);
-    let sliderWrapRef = useRef<HTMLDivElement>(null);
+    const optionDescriptionRef = useRef<HTMLDivElement>(null);
+    const optionContentRef = useRef<HTMLDivElement>(null);
+    const sliderWrapRef = useRef<HTMLDivElement>(null);
 
     useEffect(
         () => {

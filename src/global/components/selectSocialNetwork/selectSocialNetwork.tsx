@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import './selectSocialNetwork.scss';
 import { SelectSocialNetworkProps } from "../../types/SelectSocialNetworkProps";
 import { ReactComponent as Close } from '../../icons/close.svg';
@@ -10,14 +10,45 @@ import { OfferOptionType } from "../../../main/types/offerOptions";
 import { Offer } from "../../../main/models/offer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useResizeObserver } from "../../service/globalService";
+import { maxWidth640, maxWidth900 } from "../../service/windowWidth";
 
 export const SelectSocialNetwork = (props: SelectSocialNetworkProps) => {
+    const bodyRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const bodyPaddingFull: number = 24;
+    const bodyPadding900: number = 18;
+    const bodyPadding640: number = 12;
+    const [body, setBody] = useState<HTMLDivElement | null>(null);
+    const [content, setContent] = useState<HTMLDivElement | null>(null);
+
+    const getBodyPadding = useMemo(
+        () => maxWidth640
+            ? bodyPadding640
+            : maxWidth900
+                ? bodyPadding900
+                : bodyPaddingFull,
+        [],
+    );
+
     const selectSocialNetworkStyles = useMemo(
         (): React.CSSProperties => ({
             opacity: props.componentOn ? 0.8 : 0,
             top: props.componentOn ? 0 : '-100%',
+            padding: getBodyPadding,
         }),
-        [props.componentOn],
+        [props.componentOn, getBodyPadding],
+    );
+
+    const linksWrapStyles = useMemo(
+        (): React.CSSProperties => {
+            if (!body || !content) return {};
+
+            return {
+                height: body.clientHeight - (getBodyPadding * 2) - content.clientHeight,
+            };
+        },
+        [body, content, getBodyPadding],
     );
 
     const linkForOrder = useMemo(
@@ -88,30 +119,41 @@ export const SelectSocialNetwork = (props: SelectSocialNetworkProps) => {
         [linkForOrder],
     );
 
+    useResizeObserver(bodyRef, () => setTimeout(() => setBody(bodyRef.current), 300));
+    useResizeObserver(contentRef, () => setTimeout(() => setContent(contentRef.current), 300));
+
     return (
         <div
             className='content-select-social-network'
             style={selectSocialNetworkStyles}
+            ref={bodyRef}
         >
             <div
-                className='content-select-social-network__header'
+                ref={contentRef}
             >
-                <h3
-                    className='content-select-social-network__header-title'
+                <div
+                    className='content-select-social-network__header'
                 >
-                    Select a method of communication
-                </h3>
-                <Close
-                    className='content-select-social-network__close-icon'
-                    onClick={() => props.toggleComponent(false)}
-                />
+                    <h3
+                        className='content-select-social-network__header-title'
+                    >
+                        Select a method of communication
+                    </h3>
+                    <Close
+                        className='content-select-social-network__close-icon'
+                        onClick={() => props.toggleComponent(false)}
+                    />
+                </div>
+                <div
+                    className='content-select-social-network__item'
+                >
+                    {props.totalPrice}
+                </div>
             </div>
             <div
-                className='content-select-social-network__item'
+                className='content-select-social-network__links-wrap'
+                style={linksWrapStyles}
             >
-                {props.totalPrice}
-            </div>
-            <div>
                 <div
                     className='
                         content-select-social-network__item

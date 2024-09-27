@@ -11,7 +11,7 @@ export const Slider = (props: SliderProps) => {
     const [touchStartXLocation, setTouchStartXLocation] = useState<number>(0);
     const [touchMoveXLocation, setTouchMoveXLocation] = useState<number>(0);
     const [sliderWrapWidth, setSliderWrapWidth] = useState<number>(0);
-    let sliderWrapRef = useRef<HTMLDivElement>(null);
+    const sliderWrapRef = useRef<HTMLDivElement>(null);
 
     const defaultSlideWidth: number = 250;
     const defaultSlideHeight: number = 250;
