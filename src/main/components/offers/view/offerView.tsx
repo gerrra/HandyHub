@@ -5,7 +5,7 @@ import { getBrand, getOffer } from '../../../actions/mainActions';
 import { Offer } from '../../../models/offer';
 import { Brand } from '../../../models/brand';
 import { Links } from '../../../../global/emuns/links';
-import { OfferOptionType } from '../../../types/offerOptions';
+import { OfferOptionCount } from '../../../types/offerOptionCount';
 import { ReactComponent as Minus } from '../../../../global/icons/minus.svg';
 import { ReactComponent as Plus } from '../../../../global/icons/plus.svg';
 import { ReactComponent as Arrow } from '../../../../global/icons/arrow-left.svg';
@@ -16,14 +16,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useMutationObserver } from '../../../../global/service/globalService';
 import { maxWidth640 } from '../../../../global/service/windowWidth';
 import { SelectSocialNetwork } from '../../../../global/components/selectSocialNetwork/selectSocialNetwork';
+import { OfferOption } from '../../../models/offerOption';
+import { OfferOptionsGroup } from '../../../models/offerOptionsGroup';
 
 export const OfferView = () => {
-    const { brandId, offerId } = useParams()
+    const { brandId, offerId } = useParams();
     const [offer, setOffer] = useState<Offer | null>(null);
     const [brand, setBrand] = useState<Brand | null>(null);
     const [selectedContent, setSelectedContent] = useState<boolean>(false);
     const [selectedGallery, setSelectedGallery] = useState<boolean>(false);
-    const [offerOptions, setOfferOptions] = useState<OfferOptionType[]>([]);
+    const [offerOptions, setOfferOptions] = useState<OfferOptionCount[]>([]);
     const [sliderWrap, setSliderWrap] = useState<HTMLDivElement | null>(null);
     const [optionContent, setOptionContent] = useState<HTMLDivElement | null>(null);
     const [selectSocialNetworkOn, setSelectSocialNetworkOn] = useState<boolean>(false);
@@ -38,15 +40,15 @@ export const OfferView = () => {
             getBrand(brandId).then((brand: Brand) => setBrand(brand));
             getOffer(brandId, offerId).then((offer: Offer) => {
                 setOffer(offer);
-                setOfferOptions([...offer.options.map((v) => ({...v, count: 0, showDescription: false}))]);
+                setOfferOptions([...offer.options.map((options: OfferOption) => ({...options, count: 0, showDescription: false}))]);
             });
         },
         [brandId, offerId, setOffer],
     );
 
     const brandLogoStyles: React.CSSProperties = useMemo(
-        () => ({backgroundImage: `url(/images/${brand?.image ?? ''})`}),
-        [brand?.image],
+        () => ({backgroundImage: `url(/images/${brand?.logo ?? ''})`}),
+        [brand?.logo],
     );
 
     const imageStyles: React.CSSProperties = useMemo(
@@ -55,9 +57,12 @@ export const OfferView = () => {
     );
 
     const changeOfferOptionCount = useCallback(
-        (count: number, index: number) => {
+        (count: number, id: string) => {
             const newCount = count < 0 ? 0 : count;
-            setOfferOptions([...offerOptions.map((v, i) => i === index ? {...v, count: newCount } : v)]);
+            setOfferOptions([...offerOptions.map((option: OfferOptionCount) => option.id === id
+                ? {...option, count: newCount }
+                : option
+            )]);
         },
         [offerOptions],
     );
@@ -66,7 +71,7 @@ export const OfferView = () => {
         (): number => {
             let addPrice = 0;
             let count = 0;
-            offerOptions.forEach((opt: OfferOptionType) => {
+            offerOptions.forEach((opt: OfferOptionCount) => {
                 addPrice += opt.additionalPrice * opt.count;
                 count += opt.count;
             });
@@ -111,16 +116,18 @@ export const OfferView = () => {
     );
 
     const showOrHideOptionDescription = useCallback(
-        (option: OfferOptionType) => {
-            setOfferOptions([...offerOptions.map((v) => v.title === option.title    
-                ? {...v, showDescription: !v.showDescription}
-                : v)]);
+        (optionId: string) => {
+            setOfferOptions([...offerOptions.map((option: OfferOptionCount) => (
+                option.id === optionId
+                    ? {...option, count: 0, showDescription: !option.showDescription}
+                    : option
+            ))]);
         },
         [offerOptions],
     );
 
     const optionArrowClasses = useCallback(
-        (option: OfferOptionType) => classnames(
+        (option: OfferOptionCount) => classnames(
             'offer-view__content-option-arrow',
             {
                 'offer-view__content-option-arrow--open': option.showDescription,
@@ -130,7 +137,7 @@ export const OfferView = () => {
     );
 
     const optionDescriptionStyles = useCallback(
-        (option: OfferOptionType): React.CSSProperties => ({
+        (option: OfferOptionCount): React.CSSProperties => ({
             zIndex: option.showDescription ? 0 : -1,
             top: option.showDescription
                 ? (optionContent?.clientHeight ?? 0)
@@ -141,7 +148,7 @@ export const OfferView = () => {
     );
 
     const contentOptionWrapStyles = useCallback(
-        (option: OfferOptionType): React.CSSProperties => {
+        (option: OfferOptionCount): React.CSSProperties => {
             return {
                 minHeight: option.showDescription
                     ? (optionContent?.clientHeight ?? 0) + (optionDescriptionRef.current?.clientHeight ?? 0)
@@ -219,6 +226,11 @@ export const OfferView = () => {
     const offerGallerySlideHeight: number | undefined = useMemo(
         () => sliderWrap?.clientHeight,
         [sliderWrap?.clientHeight],
+    );
+
+    const optionsByGroup = useCallback(
+        (groupId: string): OfferOptionCount[] => offerOptions.filter((option: OfferOptionCount) => option.groupId === groupId),
+        [offerOptions],
     );
 
     return (
@@ -333,72 +345,76 @@ export const OfferView = () => {
                                                 </div>
                                             </div>
                                             <div className='offer-view__order-wrap'>
-                                                {
-                                                    !!offer.options.length &&
-                                                    <div
-                                                        className='offer-view__content-options-wrap'
-                                                        style={contentOptionsWrapStyles}
-                                                    >
-                                                        {
-                                                            !!offer.optionsTitle &&
-                                                            <h3 className='offer-view__content-options-title'>
-                                                                {`${offer.optionsTitle}:`}
-                                                            </h3>
-                                                        }
-                                                        {
-                                                            offerOptions.map((option: OfferOptionType, index: number) => (
-                                                                <div
-                                                                    key={index}
-                                                                    className='offer-view__content-option-wrap'
-                                                                    style={contentOptionWrapStyles(option)}
-                                                                >
-                                                                    <div
-                                                                        className='offer-view__content-option'
-                                                                        ref={optionContentRef}
-                                                                    >
+                                                <div>
+                                                    {
+                                                        offer.optionsGroups.map((group: OfferOptionsGroup, index: number) =>
+                                                            <div
+                                                                key={index}
+                                                                className='offer-view__content-options-wrap'
+                                                                style={contentOptionsWrapStyles}
+                                                            >
+                                                                {
+                                                                    !!group.title &&
+                                                                    <h3 className='offer-view__content-options-title'>
+                                                                        {`${group.title}:`}
+                                                                    </h3>
+                                                                }
+                                                                {
+                                                                    optionsByGroup(group.id).map((option: OfferOptionCount, index: number) => (
                                                                         <div
-                                                                            className='offer-view__content-option-title-wrap'
-                                                                            onClick={() => showOrHideOptionDescription(option)}
+                                                                            key={index}
+                                                                            className='offer-view__content-option-wrap'
+                                                                            style={contentOptionWrapStyles(option)}
                                                                         >
                                                                             <div
-                                                                                className={optionArrowClasses(option)}
+                                                                                className='offer-view__content-option'
+                                                                                ref={optionContentRef}
                                                                             >
-                                                                                <Arrow />
+                                                                                <div
+                                                                                    className='offer-view__content-option-title-wrap'
+                                                                                    onClick={() => showOrHideOptionDescription(option.id)}
+                                                                                >
+                                                                                    <div
+                                                                                        className={optionArrowClasses(option)}
+                                                                                    >
+                                                                                        <Arrow />
+                                                                                    </div>
+                                                                                    <div className='offer-view__content-option-title'>
+                                                                                        {`${option.title}${!!option.additionalPrice ? ` (+$${option.additionalPrice})` : ''}`}
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    className='offer-view__content-option-counter'
+                                                                                >
+                                                                                    <Minus
+                                                                                        className='offer-view__content-option-icon'
+                                                                                        onClick={() => changeOfferOptionCount(--option.count, option.id)}
+                                                                                    />
+                                                                                    <div
+                                                                                        className='offer-view__content-option-count'
+                                                                                    >
+                                                                                        {option.count}
+                                                                                    </div>
+                                                                                    <Plus
+                                                                                        className='offer-view__content-option-icon'
+                                                                                        onClick={() => changeOfferOptionCount(++option.count, option.id)}
+                                                                                    />
+                                                                                </div>
                                                                             </div>
-                                                                            <div className='offer-view__content-option-title'>
-                                                                                {`${option.title}${!!option.additionalPrice ? ` (+$${option.additionalPrice})` : ''}`}
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            className='offer-view__content-option-counter'
-                                                                        >
-                                                                            <Minus
-                                                                                className='offer-view__content-option-icon'
-                                                                                onClick={() => changeOfferOptionCount(--option.count, index)}
-                                                                            />
                                                                             <div
-                                                                                className='offer-view__content-option-count'
+                                                                                className='offer-view__content-option-description'
+                                                                                style={optionDescriptionStyles(option)}
+                                                                                ref={optionDescriptionRef}
                                                                             >
-                                                                                {option.count}
+                                                                                { option.description }
                                                                             </div>
-                                                                            <Plus
-                                                                                className='offer-view__content-option-icon'
-                                                                                onClick={() => changeOfferOptionCount(++option.count, index)}
-                                                                            />
                                                                         </div>
-                                                                    </div>
-                                                                    <div
-                                                                        className='offer-view__content-option-description'
-                                                                        style={optionDescriptionStyles(option)}
-                                                                        ref={optionDescriptionRef}
-                                                                    >
-                                                                        { option.description }
-                                                                    </div>
-                                                                </div>
-                                                            ))
-                                                        }
-                                                    </div>
-                                                }
+                                                                    ))
+                                                                }
+                                                            </div>
+                                                        )
+                                                    }
+                                                </div>
                                                 <div
                                                     className='offer-view__content-order-price'
                                                     style={contentOrderPriceStyles}

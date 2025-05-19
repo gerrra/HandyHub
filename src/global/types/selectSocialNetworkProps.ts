@@ -1,5 +1,5 @@
 import { Offer } from "../../main/models/offer";
-import { OfferOptionType } from "../../main/types/offerOptions";
+import { OfferOptionCount } from "../../main/types/offerOptionCount";
 
 export type SelectSocialNetworkProps = {
     componentOn?: boolean;
@@ -7,5 +7,5 @@ export type SelectSocialNetworkProps = {
     totalPrice: string;
     offer: Offer | null;
     price: number;
-    offerOptions: OfferOptionType[];
+    offerOptions: OfferOptionCount[];
 };

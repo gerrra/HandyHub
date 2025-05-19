@@ -55,6 +55,7 @@
         justify-content: space-between;
         width: 100%;
         height: calc(100% - 70px);
+        transition: all 0.5s;
 
         @media (max-width: 640px) {
             border-radius: 6px;
@@ -153,6 +154,10 @@
         align-content: center;
         flex-wrap: wrap;
         height: inherit;
+
+        &--hide {
+            display: none;
+        }
     }
 
     &__content-body-slider-title {

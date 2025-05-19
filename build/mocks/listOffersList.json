@@ -3,43 +3,210 @@
         "brandId": "1234",
         "offers": [
             {
-                "id": "91011",
-                "title": "Сведение",
-                "description": "Сведение бита / вокала",
-                "image": "mixing.jpg",
-                "gallery": ["mixing.jpg", "mastering.jpg", "arrangement.jpg"],
-                "price": 120,
-                "unitOfMeasurement": "шт.",
-                "optionsTitle": "Количество дорожек",
-                "options": [
+                "parentId": "1234",
+                "id": "12341234",
+                "title": "Handmade Dumplings",
+                "description": "Homemade dumplings with thin dough and juicy filling",
+                "image": "home-bites-handmade-dumplings.jpg",
+                "gallery": ["home-bites-handmade-dumplings-1.jpg", "home-bites-handmade-dumplings-2.jpg", "home-bites-handmade-dumplings-3.jpg", "home-bites-handmade-dumplings-4.jpg"],
+                "price": 9.99,
+                "unitOfMeasurement": "Pack (500g)",
+                "optionsGroups": [
                     {
-                        "title": "15 дорожек",
-                        "description": "Бит состоит из не более чем 15 дорожек, включая саунд эффекты и драм партию"
+                        "id": "12341234123",
+                        "title": "Choose Filling"
                     },
                     {
-                        "title": "30 дорожек",
-                        "description": "Бит состоит из не более чем 30 дорожек, включая саунд эффекты и драм партию",
-                        "additionalPrice": 120
+                        "id": "12341234456",
+                        "title": "Packaging"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "123412341231234",
+                        "groupId": "12341234123",
+                        "title": "Pork",
+                        "description": "Juicy and flavorful"
+                    },
+                    {
+                        "id": "123412341235678",
+                        "groupId": "12341234123",
+                        "title": "Chicken",
+                        "description": "Light and tender"
+                    },
+                    {
+                        "id": "123412341239101",
+                        "groupId": "12341234123",
+                        "title": "Beef",
+                        "description": "Rich and hearty",
+                        "additionalPrice": 1
+                    },
+                    {
+                        "id": "123412344561234",
+                        "groupId": "12341234456",
+                        "title": "Standard (500g)",
+                        "description": "Juicy and flavorful"
+                    },
+                    {
+                        "id": "123412344565678",
+                        "groupId": "12341234456",
+                        "title": "Family Pack (1kg)",
+                        "description": "Light and tender",
+                        "additionalPrice": 3
                     }
                 ]
             },
             {
-                "id": "12131",
-                "title": "Мастеринг",
-                "description": "Мастеринг композиции",
-                "unitOfMeasurement": "шт.",
-                "gallery": ["mixing.jpg", "mastering.jpg", "arrangement.jpg"],
-                "image": "mastering.jpg",
-                "price": 256
+                "parentId": "1234",
+                "id": "12345678",
+                "title": "Potato Dumplings",
+                "description": "Classic vareniki with soft potato filling",
+                "image": "home-bites-potato-dumplings.jpg",
+                "gallery": ["home-bites-potato-dumplings-1.jpg", "home-bites-potato-dumplings-2.jpg", "home-bites-potato-dumplings-3.jpg"],
+                "price": 8.50,
+                "unitOfMeasurement": "Pack (500g)",
+                "optionsGroups": [
+                    {
+                        "id": "12345678123",
+                        "title": "Add-ons"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "12345678123123",
+                        "groupId": "12345678123",
+                        "title": "Classic",
+                        "description": "Classic vareniki with soft potato filling"
+                    },
+                    {
+                        "id": "12345678123456",
+                        "groupId": "12345678123",
+                        "title": "Onion",
+                        "description": "Adds sweetness and aroma",
+                        "additionalPrice": 0.50
+                    },
+                    {
+                        "id": "12345678123789",
+                        "groupId": "12345678123",
+                        "title": "Mushrooms",
+                        "description": "Savory and earthy",
+                        "additionalPrice": 1
+                    },
+                    {
+                        "id": "12345678123101",
+                        "groupId": "12345678123",
+                        "title": "Herbs",
+                        "description": "Fresh and fragrant",
+                        "additionalPrice": 0.50
+                    }
+                ]
             },
             {
-                "id": "41516",
-                "title": "Аранжировка",
-                "description": "Музыка по вашему запросу",
-                "unitOfMeasurement": "шт.",
-                "gallery": ["mixing.jpg", "mastering.jpg", "arrangement.jpg"],
-                "image": "arrangement.jpg",
-                "price": 600
+                "parentId": "1234",
+                "id": "12349101",
+                "title": "Homemade Cutlets",
+                "description": "Juicy and flavorful cutlets — perfect for dinner",
+                "image": "home-bites-homemade-cutlets.jpg",
+                "gallery": ["home-bites-homemade-cutlets-1.jpg", "home-bites-homemade-cutlets-2.jpg", "home-bites-homemade-cutlets-3.jpg"],
+                "price": 10.00,
+                "unitOfMeasurement": "4 pieces",
+                "optionsGroups": [
+                    {
+                        "id": "12349101123",
+                        "title": "Meat Type"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "12349101123123",
+                        "groupId": "12349101123",
+                        "title": "Chicken",
+                        "description": "Classic and light"
+                    },
+                    {
+                        "id": "12349101123456",
+                        "groupId": "12349101123",
+                        "title": "Turkey",
+                        "description": "Lean and healthy",
+                        "additionalPrice": 1
+                    },
+                    {
+                        "id": "12349101123789",
+                        "groupId": "12349101123",
+                        "title": "Beef",
+                        "description": "Rich taste",
+                        "additionalPrice": 1
+                    }
+                ]
+            },
+            {
+                "parentId": "1234",
+                "id": "12341121",
+                "title": "Stuffed Pancakes",
+                "description": "Thin pancakes with various fillings — sweet and savory",
+                "image": "home-bites-stuffed-pancakes.jpg",
+                "gallery": ["home-bites-stuffed-pancakes-1.jpg", "home-bites-stuffed-pancakes-2.jpg", "home-bites-stuffed-pancakes-3.jpg"],
+                "price": 6.50,
+                "unitOfMeasurement": "Pack (4 pcs)",
+                "optionsGroups": [
+                    {
+                        "id": "12341121123",
+                        "title": "Filling"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "12341121123123",
+                        "groupId": "12341121123",
+                        "title": "Cottage cheese",
+                        "description": "Creamy and sweet"
+                    },
+                    {
+                        "id": "12341121123456",
+                        "groupId": "12341121123",
+                        "title": "Meat",
+                        "description": "Savory and satisfying",
+                        "additionalPrice": 1
+                    },
+                    {
+                        "id": "12341121123789",
+                        "groupId": "12341121123",
+                        "title": "Cherry",
+                        "description": "Tart and fruity",
+                        "additionalPrice": 0.50
+                    }
+                ]
+            },
+            {
+                "parentId": "1234",
+                "id": "12343141",
+                "title": "Cottage Cheese Pancakes",
+                "description": "Classic cottage cheese pancakes, perfect for breakfast",
+                "image": "home-bites-cottage-cheese-pancakes.jpg",
+                "gallery": ["home-bites-cottage-cheese-pancakes-1.jpg", "home-bites-cottage-cheese-pancakes-2.jpg", "home-bites-cottage-cheese-pancakes-3.jpg"],
+                "price": 7.00,
+                "unitOfMeasurement": "4 pieces",
+                "optionsGroups": [
+                    {
+                        "id": "12343141123",
+                        "title": "Add-ons"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "12343141123123",
+                        "groupId": "12343141123",
+                        "title": "Plain",
+                        "description": "Just the basics"
+                    },
+                    {
+                        "id": "12343141123456",
+                        "groupId": "12343141123",
+                        "title": "Raisins",
+                        "description": "Sweet and chewy",
+                        "additionalPrice": 0.50
+                    }
+                ]
             }
         ]
     },
@@ -47,63 +214,803 @@
         "brandId": "5678",
         "offers": [
             {
-                "id": "17181",
-                "title": "Pelmeni",
-                "description": "Pelmeni homemade",
-                "image": "dumplings1.jpg",
-                "gallery": ["dumplings2.jpg", "pancakes.jpg", "dumplings1.jpg"],
-                "price": 50,
-                "unitOfMeasurement": "lb",
-                "optionsTitle": "Filling",
-                "options": [
+                "parentId": "5678",
+                "id": "56781234",
+                "title": "Deep Apartment Cleaning",
+                "description": "Thorough cleaning of all rooms: dust, floors, bathroom, kitchen",
+                "price": 120,
+                "unitOfMeasurement": "Service",
+                "image": "clean-space-deep-apartment-cleaning.jpg",
+                "gallery": ["clean-space-deep-apartment-cleaning-1.jpg", "clean-space-deep-apartment-cleaning-2.jpg", "clean-space-deep-apartment-cleaning-3.jpg"],
+                "optionsGroups": [
                     {
-                        "title": "Chicken",
-                        "description": "Pelmeni with chicken filling"
+                        "id": "56781234123",
+                        "title": "Apartment Size"
                     },
                     {
-                        "title": "Pork/beef",
-                        "description": "Pelmeni with pork and beef filling",
+                        "id": "56781234456",
+                        "title": "Extras"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "56781234123123",
+                        "groupId": "56781234123",
+                        "title": "Up to 50 m²",
+                        "description": "Suitable for studios and small apartments"
+                    },
+                    {
+                        "id": "56781234123456",
+                        "groupId": "56781234123",
+                        "title": "50–100 m²",
+                        "description": "Ideal for medium-sized apartments",
+                        "additionalPrice": 30
+                    },
+                    {
+                        "id": "56781234456123",
+                        "groupId": "56781234456",
+                        "title": "Window cleaning",
+                        "description": "Glass and frames, both sides",
+                        "additionalPrice": 25
+                    },
+                    {
+                        "id": "56781234456456",
+                        "groupId": "56781234456",
+                        "title": "Stain removal",
+                        "description": "Tough stains from floors and surfaces",
                         "additionalPrice": 20
                     }
                 ]
             },
             {
-                "id": "92021",
-                "title": "Vareniky",
-                "description": "Vareniky",
-                "image": "dumplings2.jpg",
-                "gallery": ["dumplings2.jpg", "pancakes.jpg", "dumplings1.jpg"],
-                "price": 60,
-                "unitOfMeasurement": "lb",
-                "optionsTitle": "Filling",
-                "options": [
+                "parentId": "5678",
+                "id": "56785678",
+                "title": "Post-Renovation Cleaning",
+                "description": "Removal of construction dust, paint stains, and surface cleaning",
+                "price": 200,
+                "unitOfMeasurement": "Service",
+                "image": "clean-space-post-renovation-cleaning.jpg",
+                "gallery": ["clean-space-post-renovation-cleaning-1.jpg", "clean-space-post-renovation-cleaning-2.jpg", "clean-space-post-renovation-cleaning-3.jpg"],
+                "optionsGroups": [
                     {
-                        "title": "Kartoch",
-                        "description": "Vareniky with potato and onion filling"
+                        "id": "56785678123",
+                        "title": "Property Type"
                     },
                     {
-                        "title": "Cabbage",
-                        "description": "Vareniky with cabbage filling"
+                        "id": "56785678456",
+                        "title": "Dirt Level"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "56785678123123",
+                        "groupId": "56785678123",
+                        "title": "Apartment",
+                        "description": "Residential space"
+                    },
+                    {
+                        "id": "56785678123456",
+                        "groupId": "56785678123",
+                        "title": "Office",
+                        "description": "Commercial space",
+                        "additionalPrice": 30
+                    },
+                    {
+                        "id": "56785678456123",
+                        "groupId": "56785678456",
+                        "title": "Moderate",
+                        "description": "Normal post-renovation dirt"
+                    },
+                    {
+                        "id": "56785678456456",
+                        "groupId": "56785678456",
+                        "title": "Heavy",
+                        "description": "Heavy dirt and debris",
+                        "additionalPrice": 50
                     }
                 ]
             },
             {
-                "id": "22232",
-                "title": "Stuffed pancakes",
-                "description": "Stuffed pancakes with sausage and cheese / cottage cheese",
-                "image": "pancakes.jpg",
-                "gallery": ["dumplings2.jpg", "pancakes.jpg", "dumplings1.jpg"],
+                "parentId": "5678",
+                "id": "56789101",
+                "title": "Office Cleaning",
+                "description": "Routine or one-time office cleaning",
                 "price": 100,
-                "unitOfMeasurement": "lb",
-                "optionsTitle": "Filling",
-                "options": [
+                "unitOfMeasurement": "Service",
+                "image": "clean-space-office-cleaning.jpg",
+                "gallery": ["clean-space-office-cleaning-1.jpg", "clean-space-office-cleaning-2.jpg", "clean-space-office-cleaning-3.jpg"],
+                "optionsGroups": [
                     {
-                        "title": "Cottage cheese",
-                        "description": "Stuffed pancakes with cottage cheese filling"
+                        "id": "56789101123",
+                        "title": "Schedule"
                     },
                     {
-                        "title": "Sausage/cheese",
-                        "description": "Stuffed pancakes with grated sausage and cheese filling"
+                        "id": "56789101456",
+                        "title": "Area"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "56789101123123",
+                        "groupId": "56789101123",
+                        "title": "One-time",
+                        "description": "One-time cleaning"
+                    },
+                    {
+                        "id": "56789101123456",
+                        "groupId": "56789101123",
+                        "title": "Weekly",
+                        "description": "Weekly cleaning"
+                    },
+                    {
+                        "id": "56789101123789",
+                        "groupId": "56789101123",
+                        "title": "Daily",
+                        "description": "Daily maintenance",
+                        "additionalPrice": 100
+                    },
+                    {
+                        "id": "56789101456123",
+                        "groupId": "56789101456",
+                        "title": "Up to 100 m²",
+                        "description": "Small and medium offices"
+                    },
+                    {
+                        "id": "56789101456456",
+                        "groupId": "56789101456",
+                        "title": "100–200 m²",
+                        "description": "Larger office spaces",
+                        "additionalPrice": 50
+                    }
+                ]
+            },
+            {
+                "parentId": "5678",
+                "id": "56781121",
+                "title": "Furniture Dry Cleaning",
+                "description": "Cleaning of sofas, armchairs, and chairs from stains and odors",
+                "price": 50,
+                "unitOfMeasurement": "Service",
+                "image": "clean-space-furniture-dry-cleaning.jpg",
+                "gallery": ["clean-space-furniture-dry-cleaning-1.jpg", "clean-space-furniture-dry-cleaning-2.jpg", "clean-space-furniture-dry-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "56781121123",
+                        "title": "Furniture Type"
+                    },
+                    {
+                        "id": "56781121456",
+                        "title": "Material"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "56781121123123",
+                        "groupId": "56781121123",
+                        "title": "Sofa",
+                        "description": "Cleaning of sofa fabric or leather"
+                    },
+                    {
+                        "id": "56781121123456",
+                        "groupId": "56781121123",
+                        "title": "Armchair",
+                        "description": "Cleaning of armchair fabric or leather",
+                        "additionalPrice": 15
+                    },
+                    {
+                        "id": "56781121456123",
+                        "groupId": "56781121456",
+                        "title": "Fabric",
+                        "description": "Suitable for fabric-covered furniture"
+                    },
+                    {
+                        "id": "56781121456456",
+                        "groupId": "56781121456",
+                        "title": "Leather",
+                        "description": "For leather or imitation leather furniture",
+                        "additionalPrice": 20
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "brandId": "9101",
+        "offers": [
+            {
+                "parentId": "9101",
+                "id": "91011234",
+                "title": "Office Cleaning",
+                "description": "Routine or one-time office cleaning",
+                "price": 100,
+                "unitOfMeasurement": "Service",
+                "image": "handy-fix-office-cleaning.jpg",
+                "gallery": ["handy-fix-office-cleaning-1.jpg", "handy-fix-office-cleaning-2.jpg", "handy-fix-office-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "91011234123",
+                        "title": "Schedule"
+                    },
+                    {
+                        "id": "91011234456",
+                        "title": "Area"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "91011234123123",
+                        "groupId": "91011234123",
+                        "title": "One-time",
+                        "description": "One-time cleaning"
+                    },
+                    {
+                        "id": "91011234123456",
+                        "groupId": "91011234123",
+                        "title": "Weekly",
+                        "description": "Weekly cleaning"
+                    },
+                    {
+                        "id": "91011234123789",
+                        "groupId": "91011234123",
+                        "title": "Daily",
+                        "description": "Daily maintenance",
+                        "additionalPrice": 100
+                    },
+                    {
+                        "id": "91011234456123",
+                        "groupId": "91011234456",
+                        "title": "Up to 100 m²",
+                        "description": "Small and medium offices"
+                    },
+                    {
+                        "id": "91011234456456",
+                        "groupId": "91011234456",
+                        "title": "100–200 m²",
+                        "description": "Larger office spaces",
+                        "additionalPrice": 50
+                    }
+                ]
+            },
+            {
+                "parentId": "9101",
+                "id": "91015678",
+                "title": "Post-Renovation Cleaning",
+                "description": "Removal of construction dust, paint stains, and surface cleaning",
+                "price": 200,
+                "unitOfMeasurement": "Service",
+                "image": "handy-fix-post-renovation-cleaning.jpg",
+                "gallery": ["handy-fix-post-renovation-cleaning-1.jpg", "handy-fix-post-renovation-cleaning-2.jpg", "handy-fix-post-renovation-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "91015678123",
+                        "title": "Property Type"
+                    },
+                    {
+                        "id": "91015678456",
+                        "title": "Dirt Level"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "91015678123123",
+                        "groupId": "91015678123",
+                        "title": "Apartment",
+                        "description": "Residential space"
+                    },
+                    {
+                        "id": "91015678123456",
+                        "groupId": "91015678123",
+                        "title": "Office",
+                        "description": "Commercial space",
+                        "additionalPrice": 30
+                    },
+                    {
+                        "id": "91015678456123",
+                        "groupId": "91015678456",
+                        "title": "Moderate",
+                        "description": "Normal post-renovation dirt"
+                    },
+                    {
+                        "id": "91015678456456",
+                        "groupId": "91015678456",
+                        "title": "Heavy",
+                        "description": "Heavy dirt and debris",
+                        "additionalPrice": 50
+                    }
+                ]
+            },
+            {
+                "parentId": "9101",
+                "id": "91019101",
+                "title": "Deep Apartment Cleaning",
+                "description": "Thorough cleaning of all rooms: dust, floors, bathroom, kitchen",
+                "price": 120,
+                "unitOfMeasurement": "Service",
+                "image": "handy-fix-deep-apartment-cleaning.jpg",
+                "gallery": ["handy-fix-deep-apartment-cleaning-1.jpg", "handy-fix-deep-apartment-cleaning-2.jpg", "handy-fix-deep-apartment-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "91019101123",
+                        "title": "Apartment Size"
+                    },
+                    {
+                        "id": "91019101456",
+                        "title": "Extras"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "91019101123123",
+                        "groupId": "91019101123",
+                        "title": "Up to 50 m²",
+                        "description": "Suitable for studios and small apartments"
+                    },
+                    {
+                        "id": "91019101123456",
+                        "groupId": "91019101123",
+                        "title": "50–100 m²",
+                        "description": "Ideal for medium-sized apartments",
+                        "additionalPrice": 30
+                    },
+                    {
+                        "id": "91019101456123",
+                        "groupId": "91019101456",
+                        "title": "Window cleaning",
+                        "description": "Glass and frames, both sides",
+                        "additionalPrice": 25
+                    },
+                    {
+                        "id": "91019101456456",
+                        "groupId": "91019101456",
+                        "title": "Stain removal",
+                        "description": "Tough stains from floors and surfaces",
+                        "additionalPrice": 20
+                    }
+                ]
+            },
+            {
+                "parentId": "9101",
+                "id": "91011211",
+                "title": "Furniture Dry Cleaning",
+                "description": "Cleaning of sofas, armchairs, and chairs from stains and odors",
+                "price": 50,
+                "unitOfMeasurement": "Service",
+                "image": "handy-fix-furniture-dry-cleaning.jpg",
+                "gallery": ["handy-fix-furniture-dry-cleaning-1.jpg", "handy-fix-furniture-dry-cleaning-2.jpg", "handy-fix-furniture-dry-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "91011211123",
+                        "title": "Furniture Type"
+                    },
+                    {
+                        "id": "91011211456",
+                        "title": "Material"
+                    }
+                ],
+                "options": [
+                    {   
+                        "id": "91011211123123",
+                        "groupId": "91011211123",
+                        "title": "Sofa",
+                        "description": "Cleaning of sofa fabric or leather"
+                    },
+                    {
+                        "id": "91011211123456",
+                        "groupId": "91011211123",
+                        "title": "Armchair",
+                        "description": "Cleaning of armchair fabric or leather",
+                        "additionalPrice": 15
+                    },
+                    {
+                        "id": "91011211456123",
+                        "groupId": "91011211456",
+                        "title": "Fabric",
+                        "description": "Suitable for fabric-covered furniture"
+                    },
+                    {
+                        "id": "91011211456456",
+                        "groupId": "91011211456",
+                        "title": "Leather",
+                        "description": "For leather or imitation leather furniture",
+                        "additionalPrice": 20
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "brandId": "1121",
+        "offers": [
+            {
+                "parentId": "1121",
+                "id": "11211234",
+                "title": "Move-out Cleaning",
+                "description": "Cleaning after tenants move out, including kitchen and bathroom sanitizing",
+                "price": 150,
+                "unitOfMeasurement": "Service",
+                "image": "crystal-clean-move-out-cleaning.jpg",
+                "gallery": ["crystal-clean-move-out-cleaning-1.jpg", "crystal-clean-move-out-cleaning-2.jpg", "crystal-clean-move-out-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "11211234123",
+                        "title": "Size"
+                    },
+                    {
+                        "id": "11211234456",
+                        "title": "Extras"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "11211234123123",
+                        "groupId": "11211234123",
+                        "title": "Studio",
+                        "description": "For small apartments or studios"
+                    },
+                    {
+                        "id": "11211234123456",
+                        "groupId": "11211234123",
+                        "title": "1 Bedroom",
+                        "description": "Suitable for 1 bedroom apartments",
+                        "additionalPrice": 40
+                    },
+                    {
+                        "id": "11211234456123",
+                        "groupId": "11211234456",
+                        "title": "Window Cleaning",
+                        "description": "Cleaning windows inside and outside",
+                        "additionalPrice": 30
+                    },
+                    {
+                        "id": "11211234456456",
+                        "groupId": "11211234456",
+                        "title": "Carpet Shampooing",
+                        "description": "Deep cleaning for carpets",
+                        "additionalPrice": 50
+                    }
+                ]
+            },
+            {
+                "parentId": "1121",
+                "id": "11215678",
+                "title": "Carpet and Rug Cleaning",
+                "description": "Professional cleaning of carpets and rugs, removing stains and odors",
+                "price": 70,
+                "unitOfMeasurement": "Service",
+                "image": "crystal-clean-carpet-and-rug-cleaning.jpg",
+                "gallery": ["crystal-clean-carpet-and-rug-cleaning-1.jpg", "crystal-clean-carpet-and-rug-cleaning-2.jpg", "crystal-clean-carpet-and-rug-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "11215678123",
+                        "title": "Carpet Type"
+                    },
+                    {
+                        "id": "11215678456",
+                        "title": "Size"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "11215678123123",
+                        "groupId": "11215678123",
+                        "title": "Standard",
+                        "description": "For regular carpets"
+                    },
+                    {
+                        "id": "11215678123456",
+                        "groupId": "11215678123",
+                        "title": "Heavy Duty",
+                        "description": "For high-traffic areas and heavy dirt",
+                        "additionalPrice": 20
+                    },
+                    {
+                        "id": "11215678456123",
+                        "groupId": "11215678456",
+                        "title": "Small",
+                        "description": "Small area or rug cleaning"
+                    },
+                    {
+                        "id": "11215678456456",
+                        "groupId": "11215678456",
+                        "title": "Large",
+                        "description": "For large rugs or multiple carpets",
+                        "additionalPrice": 40
+                    }
+                ]
+            },
+            {
+                "parentId": "1121",
+                "id": "11219101",
+                "title": "Post-Party Cleaning",
+                "description": "Cleaning up after parties, including trash removal and surface cleaning",
+                "price": 180,
+                "unitOfMeasurement": "Service",
+                "image": "crystal-clean-post-party-cleaning.jpg",
+                "gallery": ["crystal-clean-post-party-cleaning-1.jpg", "crystal-clean-post-party-cleaning-2.jpg", "crystal-clean-post-party-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "11219101123",
+                        "title": "Size"
+                    },
+                    {
+                        "id": "11219101456",
+                        "title": "Additional Services"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "11219101123123",
+                        "groupId": "11219101123",
+                        "title": "Small Event",
+                        "description": "For small gatherings and parties"
+                    },
+                    {
+                        "id": "11219101123456",
+                        "groupId": "11219101123",
+                        "title": "Large Event",
+                        "description": "For large parties or events",
+                        "additionalPrice": 50
+                    },
+                    {
+                        "id": "11219101456123",
+                        "groupId": "11219101456",
+                        "title": "Trash Removal",
+                        "description": "Includes removing all trash and waste",
+                        "additionalPrice": 40
+                    },
+                    {
+                        "id": "11219101456456",
+                        "groupId": "11219101456",
+                        "title": "Deep Surface Cleaning",
+                        "description": "Deep cleaning of all surfaces",
+                        "additionalPrice": 60
+                    }
+                ]
+            },
+            {
+                "parentId": "1121",
+                "id": "11211211",
+                "title": "Laundry Service",
+                "description": "Washing and ironing clothes, bed linens, and other laundry items",
+                "price": 30,
+                "unitOfMeasurement": "Service",
+                "image": "crystal-clean-laundry-service.jpg",
+                "gallery": ["crystal-clean-laundry-service-1.jpg", "crystal-clean-laundry-service-2.jpg", "crystal-clean-laundry-service-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "11211211123",
+                        "title": "Service Type"
+                    },
+                    {
+                        "id": "11211211456",
+                        "title": "Items"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "11211211123123",
+                        "groupId": "11211211123",
+                        "title": "Regular Wash",
+                        "description": "Standard washing and drying"
+                    },
+                    {
+                        "id": "11211211123456",
+                        "groupId": "11211211123",
+                        "title": "Premium Wash",
+                        "description": "Gentle wash and premium detergent",
+                        "additionalPrice": 15
+                    },
+                    {
+                        "id": "11211211456123",
+                        "groupId": "11211211456",
+                        "title": "Clothes",
+                        "description": "Standard clothes washing"
+                    },
+                    {
+                        "id": "11211211456456",
+                        "groupId": "11211211456",
+                        "title": "Bedding",
+                        "description": "For sheets, blankets, and bed linens",
+                        "additionalPrice": 20
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "brandId": "3141",
+        "offers": [
+            {
+                "parentId": "3141",
+                "id": "31411234",
+                "title": "Office Cleaning",
+                "description": "Professional cleaning for office spaces, including dusting, vacuuming, and trash removal",
+                "price": 200,
+                "unitOfMeasurement": "Service",
+                "image": "pro-cleaning-office-cleaning.jpg",
+                "gallery": ["pro-cleaning-office-cleaning-1.jpg", "pro-cleaning-office-cleaning-2.jpg", "pro-cleaning-office-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "31411234123",
+                        "title": "Size"
+                    },
+                    {
+                        "id": "31411234456",
+                        "title": "Extras"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "31411234123123",
+                        "groupId": "31411234123",
+                        "title": "Small Office",
+                        "description": "For small office spaces"
+                    },
+                    {
+                        "id": "31411234123456",
+                        "groupId": "31411234123",
+                        "title": "Large Office",
+                        "description": "For larger offices",
+                        "additionalPrice": 50
+                    },
+                    {
+                        "id": "31411234456123",
+                        "groupId": "31411234456",
+                        "title": "Window Cleaning",
+                        "description": "Cleaning windows inside and outside",
+                        "additionalPrice": 40
+                    },
+                    {
+                        "id": "31411234456456",
+                        "groupId": "31411234456",
+                        "title": "Carpet Cleaning",
+                        "description": "Deep cleaning for office carpets",
+                        "additionalPrice": 60
+                    }
+                ]
+            },
+            {
+                "parentId": "3141",
+                "id": "31415678",
+                "title": "Upholstery Cleaning",
+                "description": "Cleaning of upholstery including couches and chairs, removing stains and odors",
+                "price": 120,
+                "unitOfMeasurement": "Service",
+                "image": "pro-cleaning-upholstery-cleaning.jpg",
+                "gallery": ["pro-cleaning-upholstery-cleaning-1.jpg", "pro-cleaning-upholstery-cleaning-2.jpg", "pro-cleaning-upholstery-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "31415678123",
+                        "title": "Type"
+                    },
+                    {
+                        "id": "31415678456",
+                        "title": "Size"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "31415678123123",
+                        "groupId": "31415678123",
+                        "title": "Couch",
+                        "description": "For couches and sofas"
+                    },
+                    {
+                        "id": "31415678123456",
+                        "groupId": "31415678123",
+                        "title": "Chair",
+                        "description": "For single chairs or armchairs",
+                        "additionalPrice": 30
+                    },
+                    {
+                        "id": "31415678456123",
+                        "groupId": "31415678456",
+                        "title": "Small",
+                        "description": "For small-sized upholstery"
+                    },
+                    {
+                        "id": "31415678456456",
+                        "groupId": "31415678456",
+                        "title": "Large",
+                        "description": "For larger furniture pieces",
+                        "additionalPrice": 40
+                    }
+                ]
+            },
+            {
+                "parentId": "3141",
+                "id": "31419101",
+                "title": "Deep Cleaning",
+                "description": "Comprehensive cleaning of all surfaces, floors, and windows for a complete clean",
+                "price": 250,
+                "unitOfMeasurement": "Service",
+                "image": "pro-cleaning-deep-cleaning.jpg",
+                "gallery": ["pro-cleaning-deep-cleaning-1.jpg", "pro-cleaning-deep-cleaning-2.jpg", "pro-cleaning-deep-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "31419101123",
+                        "title": "Size"
+                    },
+                    {
+                        "id": "31419101456",
+                        "title": "Extras"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "31419101123123",
+                        "groupId": "31419101123",
+                        "title": "Small Apartment",
+                        "description": "For small apartments and homes"
+                    },
+                    {
+                        "id": "31419101123456",
+                        "groupId": "31419101123",
+                        "title": "Large Apartment",
+                        "description": "For large apartments and homes",
+                        "additionalPrice": 70
+                    },
+                    {
+                        "id": "31419101456123",
+                        "groupId": "31419101456",
+                        "title": "Carpet Shampooing",
+                        "description": "Deep cleaning of carpets with shampoo",
+                        "additionalPrice": 50
+                    },
+                    {
+                        "id": "31419101456456",
+                        "groupId": "31419101456",
+                        "title": "Window Cleaning",
+                        "description": "Cleaning all windows inside and outside",
+                        "additionalPrice": 40
+                    }
+                ]
+            },
+            {
+                "parentId": "3141",
+                "id": "31411211",
+                "title": "Floor Cleaning",
+                "description": "Floor cleaning service for tile, wood, and carpeted floors",
+                "price": 100,
+                "unitOfMeasurement": "Service",
+                "image": "pro-cleaning-floor-cleaning.jpg",
+                "gallery": ["pro-cleaning-floor-cleaning-1.jpg", "pro-cleaning-floor-cleaning-2.jpg", "pro-cleaning-floor-cleaning-3.jpg"],
+                "optionsGroups": [
+                    {
+                        "id": "31411211123",
+                        "title": "Floor Type"
+                    },
+                    {
+                        "id": "31411211456",
+                        "title": "Size"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "31411211123123",
+                        "groupId": "31411211123",
+                        "title": "Tile Floors",
+                        "description": "For tile and ceramic floors"
+                    },
+                    {
+                        "id": "31411211123456",
+                        "groupId": "31411211123",
+                        "title": "Wood Floors",
+                        "description": "For wood and laminate floors",
+                        "additionalPrice": 20
+                    },
+                    {
+                        "id": "31411211456123",
+                        "groupId": "31411211456",
+                        "title": "Small Area",
+                        "description": "For small rooms or spaces"
+                    },
+                    {
+                        "id": "31411211456456",
+                        "groupId": "31411211456",
+                        "title": "Large Area",
+                        "description": "For larger spaces or entire floors",
+                        "additionalPrice": 40
                     }
                 ]
             }

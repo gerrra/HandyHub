@@ -47,6 +47,14 @@
             max-width: 50px;
             height: 50px;
         }
+
+        .brand-list-item__title {
+            font-size: 34px;
+        }
+
+        .brand-list-item__description {
+            font-size: 17px;
+        }
     }
 
     &__wrap {
@@ -91,9 +99,14 @@
 
     &__title {
         margin: 0;
+        transition: all 0.3s;
 
         @media (max-width: 640px) {
             font-size: 24px;
         }
+    }
+
+    &__description {
+        transition: all 0.3s;
     }
 }

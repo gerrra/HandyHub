@@ -1,5 +1,6 @@
 import * as t from 'io-ts';
 import { OfferOption, OfferOptionDTO, OfferOptionType } from './offerOption';
+import { OfferOptionsGroup, OfferOptionsGroupDTO, OfferOptionsGroupType } from './offerOptionsGroup';
 
 export const OfferType = t.interface({
     parentId: t.string,
@@ -9,8 +10,8 @@ export const OfferType = t.interface({
     image: t.union([t.string, t.null, t.undefined]),
     price: t.union([t.number, t.null, t.undefined]),
     unitOfMeasurement: t.union([t.string, t.null, t.undefined]),
-    optionsTitle: t.union([t.string, t.null, t.undefined]),
     gallery: t.union([t.array(t.string), t.null, t.undefined]),
+    optionsGroups: t.union([t.array(OfferOptionsGroupType), t.null, t.undefined]),
     options: t.union([t.array(OfferOptionType), t.null, t.undefined]),
 });
 
@@ -24,8 +25,8 @@ class Offer {
     image: string | null;
     price: number;
     unitOfMeasurement: string | null;
-    optionsTitle: string | null;
     gallery: string[];
+    optionsGroups: OfferOptionsGroup[];
     options: OfferOption[];
 
     constructor(params: OfferDTO) {
@@ -36,10 +37,12 @@ class Offer {
         this.image = params.image ?? null;
         this.price = params.price ?? 0;
         this.unitOfMeasurement = params.unitOfMeasurement ?? null;
-        this.optionsTitle = params.optionsTitle ?? null;
         this.gallery = params.gallery?.length ? params.gallery : [];
+        this.optionsGroups = params.optionsGroups?.length
+            ? params.optionsGroups.map((offerOptionsGroup: OfferOptionsGroupDTO) => new OfferOptionsGroup(offerOptionsGroup))
+            : [];
         this.options = params.options?.length
-            ? params.options.map((offerOption: OfferOptionDTO) => new OfferOption(offerOption))
+            ? params.options.map((offerOptions: OfferOptionDTO) => new OfferOption(offerOptions))
             : [];
     }
 }

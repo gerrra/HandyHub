@@ -15,7 +15,7 @@ class OffersList {
     constructor(params: OffersListDTO) {
         this.brandId = params.brandId;
         this.offers = params.offers
-            ? params.offers.map((offer: OfferDTO) => new Offer({...offer, parentId: params.brandId}))
+            ? params.offers.map((offer: OfferDTO) => new Offer(offer))
             : [];
     }
 }

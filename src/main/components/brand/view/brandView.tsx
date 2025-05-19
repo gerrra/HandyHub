@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './brandView.scss';
 import { useParams } from 'react-router-dom';
+import classnames from 'classnames';
 import { Brand } from '../../../models/brand';
 import { getBrand, getOffersList } from '../../../actions/mainActions';
 import { Slider } from '../../../../global/components/slider/slider';
@@ -30,8 +31,8 @@ export const BrandView = () => {
     );
 
     const logoStyles: React.CSSProperties = useMemo(
-        () => ({backgroundImage: `url(/images/${item?.image ?? ''})`}),
-        [item?.image],
+        () => ({backgroundImage: `url(/images/${item?.logo ?? ''})`}),
+        [item?.logo],
     );
 
     const getContentSlideWrapPadding = useMemo(
@@ -53,25 +54,33 @@ export const BrandView = () => {
     const slideWidth: number | undefined = useMemo(
         () => {
             if (contentSliderWrap) {
-                return contentSliderWrap.clientWidth - (getContentSlideWrapPadding * 2);
+                return (contentSliderWrap.clientWidth - (getContentSlideWrapPadding * 2)) / 100 * 70;
             }
         },
         [contentSliderWrap, getContentSlideWrapPadding],
     );
 
-    const slideHeight: number | undefined = useMemo(
-        () => {
-            if (contentSliderWrap) {
-                return contentSliderWrap.clientHeight / 100 * 75;
-            }
-        },
-        [contentSliderWrap],
+    const contentSliderClasses = useMemo(
+        () => classnames(
+            'brand-view__content-slider',
+            {
+                'brand-view__content-slider--hide': !slideWidth
+            },
+        ),
+        [slideWidth],
+    );
+
+    const contentBodyStyles: React.CSSProperties = useMemo(
+        () => ({
+            opacity: !slideWidth ? 0 : 1,
+        }),
+        [slideWidth],
     );
 
     useMutationObserver(contentSliderWrapRef, () => setContentSliderWrap(contentSliderWrapRef.current), { childList: true, subtree: true });
 
     return (
-        !!item && 
+        !!item &&
         <div className="brand-view">
             <div className="brand-view__content">
                 <div className='brand-view__content-header'>
@@ -86,7 +95,10 @@ export const BrandView = () => {
                     >
                     </div>
                 </div>
-                <div className='brand-view__content-body'>
+                <div
+                    className='brand-view__content-body'
+                    style={contentBodyStyles}
+                >
                     <div className='brand-view__content-body-description-wrap'>
                         <h2 className='brand-view__content-body-description-title'>
                             Description:
@@ -116,11 +128,13 @@ export const BrandView = () => {
                         <h2 className='brand-view__content-body-slider-title'>
                             Offers:
                         </h2>
-                        <div className='brand-view__content-slider'>
+                        <div
+                            className={contentSliderClasses}
+                        >
                             <Slider
                                 offAutoSlide
                                 selectedSlideWidth={slideWidth}
-                                selectedSlideHeight={maxWidth640 ? 300 : maxWidth900 ? 400 : slideHeight}
+                                selectedSlideHeight={maxWidth900 ? 300 : slideWidth}
                                 hideArrows={maxWidth900}
                                 hideDots={maxWidth900}
                                 slides={[

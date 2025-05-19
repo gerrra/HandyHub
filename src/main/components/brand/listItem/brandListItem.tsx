@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 export const BrandListItem = (props: BrandItemProps) => {
     const logoStyles: React.CSSProperties = useMemo(
-        () => ({backgroundImage: `url(/images/${props.item.image})`}),
-        [props.item.image],
+        () => ({backgroundImage: `url(/images/${props.item.logo})`}),
+        [props.item.logo],
     );
 
     const brandItemLink: string = useMemo(
@@ -36,9 +36,9 @@ export const BrandListItem = (props: BrandItemProps) => {
                     </div>
                 </div>
                 {
-                    !!props.item.brandDescription &&
+                    !!props.item.brandShortDescription &&
                     <div className='brand-list-item__description'>
-                        { props.item.brandDescription }
+                        { props.item.brandShortDescription }
                     </div>
                 }
             </Link>

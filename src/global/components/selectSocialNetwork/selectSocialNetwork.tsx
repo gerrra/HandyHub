@@ -1,17 +1,18 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
 import './selectSocialNetwork.scss';
-import { SelectSocialNetworkProps } from "../../types/SelectSocialNetworkProps";
+import { SelectSocialNetworkProps } from "../../types/selectSocialNetworkProps";
 import { ReactComponent as Close } from '../../icons/close.svg';
 import { ReactComponent as Telegram } from '../../icons/telegram.svg';
 import { ReactComponent as Whatsapp } from '../../icons/whatsapp.svg';
 import { ReactComponent as Viber } from '../../icons/viber.svg';
 import { ReactComponent as Imessage } from '../../icons/imessage.svg';
-import { OfferOptionType } from "../../../main/types/offerOptions";
+import { OfferOptionCount } from "../../../main/types/offerOptionCount";
 import { Offer } from "../../../main/models/offer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useResizeObserver } from "../../service/globalService";
 import { maxWidth640, maxWidth900 } from "../../service/windowWidth";
+import { OfferOptionsGroup } from "../../../main/models/offerOptionsGroup";
 
 export const SelectSocialNetwork = (props: SelectSocialNetworkProps) => {
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -51,15 +52,16 @@ export const SelectSocialNetwork = (props: SelectSocialNetworkProps) => {
         [body, content, getBodyPadding],
     );
 
-    const linkForOrder = useMemo(
-        (): string => {
+    const linkForOrder: string = useMemo(
+        () => {
             const offer: Offer | null = props.offer;
             if (!offer || !props.price) return '';
 
             let options: string = '';
-            props.offerOptions.forEach((v: OfferOptionType) => {
-                if (!!v.count) {
-                    options += ` ${offer.optionsTitle}: ${v.title} ${v.count}${offer.unitOfMeasurement}.`
+            props.offerOptions.forEach((option: OfferOptionCount) => {
+                if (!!option.count) {
+                    const group: OfferOptionsGroup = offer.optionsGroups[offer.optionsGroups.findIndex((group: OfferOptionsGroup) => group.id === option.groupId)]
+                    options += ` ${group.title}: ${option.title} ${option.count}(${offer.unitOfMeasurement}).`
                 }
             });
             return `Hello! I want to order ${offer.title}.${options} Price: $${props.price}`;
@@ -71,7 +73,14 @@ export const SelectSocialNetwork = (props: SelectSocialNetworkProps) => {
         () => {
             if (!linkForOrder) return;
 
-            window.location.href = `https://t.me/grsm_v_ch?text=${linkForOrder}`;
+            navigator.clipboard.writeText(linkForOrder)
+                .then(() => {
+                    toast("Your order message has been copied to your clipboard. You can paste it into the chat.")
+                    setTimeout(() => (window.location.href = 'https://t.me/gerrra_smvch'), 3000);
+                })
+                .catch(err => {
+                    console.log('Something went wrong', err);
+                });
         },
         [linkForOrder],
     );
@@ -80,7 +89,14 @@ export const SelectSocialNetwork = (props: SelectSocialNetworkProps) => {
         () => {
             if (!linkForOrder) return;
 
-            window.location.href = `https://wa.me/+12532824884?text=${linkForOrder}`;
+            navigator.clipboard.writeText(linkForOrder)
+                .then(() => {
+                    toast("Your order message has been copied to your clipboard. You can paste it into the chat.")
+                    setTimeout(() => (window.location.href = 'https://wa.me/+12533243648'), 3000);
+                })
+                .catch(err => {
+                    console.log('Something went wrong', err);
+                });
         },
         [linkForOrder],
     );
@@ -109,7 +125,7 @@ export const SelectSocialNetwork = (props: SelectSocialNetworkProps) => {
             navigator.clipboard.writeText(linkForOrder)
                 .then(() => {
                     toast("Your order message has been copied to your clipboard. You can paste it into the chat.")
-                    setTimeout(() => (window.location.href = 'imessage://+12532824884'), 3000);
+                    setTimeout(() => (window.location.href = 'imessage://+12533243648'), 3000);
                 })
                 .catch(err => {
                     console.log('Something went wrong', err);
