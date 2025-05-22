@@ -7,7 +7,7 @@ import { getBrand, getOffersList } from '../../../actions/mainActions';
 import { Slider } from '../../../../global/components/slider/slider';
 import { Offer } from '../../../models/offer';
 import { Links } from '../../../../global/emuns/links';
-import { useMutationObserver } from '../../../../global/service/globalService';
+import { smartImageCloudinary, useMutationObserver } from '../../../../global/service/globalService';
 import { maxWidth640, maxWidth900 } from '../../../../global/service/windowWidth';
 
 export const BrandView = () => {
@@ -28,11 +28,6 @@ export const BrandView = () => {
             getOffersList(id).then((offers: Offer[]) => setOffers([...offers]));
         },
         [id, setItem, setOffers],
-    );
-
-    const logoStyles: React.CSSProperties = useMemo(
-        () => ({backgroundImage: `url(/images/${item?.logo ?? ''})`}),
-        [item?.logo],
     );
 
     const getContentSlideWrapPadding = useMemo(
@@ -89,11 +84,11 @@ export const BrandView = () => {
                             item.title ?? ''
                         }
                     </h1>
-                    <div
-                        style={logoStyles}
+                    <img
+                        alt={item.title ?? ''}
+                        src={smartImageCloudinary(item?.logo ?? '', 40)}
                         className='brand-view__content-logo'
-                    >
-                    </div>
+                    />
                 </div>
                 <div
                     className='brand-view__content-body'
@@ -158,7 +153,7 @@ export const BrandView = () => {
                                             </div>
                                         ),
                                         link: `/#${Links.BRAND}/${offer.parentId}${Links.OFFER}/${offer.id}`,
-                                        backgroundImage: offer.image ?? '',
+                                        image: offer.image ?? '',
                                     }))
                                 ]}
                             />

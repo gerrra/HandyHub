@@ -4,7 +4,7 @@ import { SliderProps } from '../../types/sliderProps';
 import { SliderItemType } from '../../types/sliderItemProps';
 import classnames from 'classnames';
 import { ReactComponent as ArrowLeft } from '../../icons/arrow-left.svg';
-import { useResizeObserver } from '../../service/globalService';
+import { smartImageCloudinary, useResizeObserver } from '../../service/globalService';
 
 export const Slider = (props: SliderProps) => {
     const [slides, setSlides] = useState<SliderItemType[]>([]);
@@ -76,7 +76,6 @@ export const Slider = (props: SliderProps) => {
 
     const imageStyles = useCallback(
         (image: string | null, selected: boolean) => ({
-            backgroundImage: image ? `url(/images/${image})`: '',
             width: selected ? selectedSlideWidth : slideWidth,
             height: selected ? selectedSlideHeight : slideHeight,
         }),
@@ -232,10 +231,12 @@ export const Slider = (props: SliderProps) => {
                                     {item.component}
                                 </div>
                                 {
-                                    !!item.backgroundImage &&
-                                    <div
+                                    !!item.image &&
+                                    <img
+                                        alt={''}
+                                        src={smartImageCloudinary(item.image, item.selected ? selectedSlideWidth : slideWidth)}
                                         className='slider-item__image'
-                                        style={imageStyles(item.backgroundImage, item.selected)}
+                                        style={imageStyles(item.image, item.selected)}
                                     />
                                 }
                             </div>

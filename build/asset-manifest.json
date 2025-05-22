@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.99edfd4d.css",
-    "main.js": "/static/js/main.e0dab254.js",
+    "main.css": "/static/css/main.ae4ef114.css",
+    "main.js": "/static/js/main.5ac53c76.js",
     "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
     "static/media/handyHubLogo.svg": "/static/media/handyHubLogo.06dfeb05c53e1d83916d40d755bcbaf1.svg",
     "static/media/handyHubLogoMin.svg": "/static/media/handyHubLogoMin.fe865fe968bd5a3ccfea124e3727649c.svg",
@@ -17,12 +17,12 @@
     "static/media/arrow-left.svg": "/static/media/arrow-left.f2a5e7a7a1a7a3d2eea1a992bd46e24f.svg",
     "static/media/plus.svg": "/static/media/plus.de23c845a28aaa8d1ac0d89ed8a4b8db.svg",
     "static/media/minus.svg": "/static/media/minus.7a9911935057546a354eb19b2e892b8f.svg",
-    "main.99edfd4d.css.map": "/static/css/main.99edfd4d.css.map",
-    "main.e0dab254.js.map": "/static/js/main.e0dab254.js.map",
+    "main.ae4ef114.css.map": "/static/css/main.ae4ef114.css.map",
+    "main.5ac53c76.js.map": "/static/js/main.5ac53c76.js.map",
     "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.99edfd4d.css",
-    "static/js/main.e0dab254.js"
+    "static/css/main.ae4ef114.css",
+    "static/js/main.5ac53c76.js"
   ]
 }

@@ -76,3 +76,10 @@ export const useResizeObserver = (
         [latestCb, ref],
     );
 }
+
+export const smartImageCloudinary = (publicId: string, width: number): string => {
+    const base = 'https://res.cloudinary.com/degbwhghr/image/upload';
+    const url = `${base}/c_fill,w_${Math.round(width * 3)},q_auto:eco,f_webp/${publicId}`;
+
+    return url;
+};

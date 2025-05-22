@@ -4,5 +4,5 @@ export type SliderItem = {
     component: ReactNode;
     selected?: boolean;
     link?: string;
-    backgroundImage?: string;
+    image?: string;
 };

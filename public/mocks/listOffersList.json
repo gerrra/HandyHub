@@ -7,8 +7,8 @@
                 "id": "12341234",
                 "title": "Handmade Dumplings",
                 "description": "Homemade dumplings with thin dough and juicy filling",
-                "image": "home-bites-handmade-dumplings.jpg",
-                "gallery": ["home-bites-handmade-dumplings-1.jpg", "home-bites-handmade-dumplings-2.jpg", "home-bites-handmade-dumplings-3.jpg", "home-bites-handmade-dumplings-4.jpg"],
+                "image": "/v1747888474/home-bites-handmade-dumplings_e7zzkv.jpg",
+                "gallery": ["/v1747888472/home-bites-handmade-dumplings-1_kdvdwh.jpg", "/v1747888472/home-bites-handmade-dumplings-2_unuece.jpg", "/v1747888472/home-bites-handmade-dumplings-3_o1qcpf.jpg", "/v1747888473/home-bites-handmade-dumplings-4_crjkdo.jpg"],
                 "price": 9.99,
                 "unitOfMeasurement": "Pack (500g)",
                 "optionsGroups": [
@@ -61,8 +61,8 @@
                 "id": "12345678",
                 "title": "Potato Dumplings",
                 "description": "Classic vareniki with soft potato filling",
-                "image": "home-bites-potato-dumplings.jpg",
-                "gallery": ["home-bites-potato-dumplings-1.jpg", "home-bites-potato-dumplings-2.jpg", "home-bites-potato-dumplings-3.jpg"],
+                "image": "/v1747888967/home-bites-potato-dumplings_dbrhwz.jpg",
+                "gallery": ["/v1747888964/home-bites-potato-dumplings-1_ujk4cw.jpg", "/v1747888965/home-bites-potato-dumplings-2_mwwlls.jpg", "/v1747888966/home-bites-potato-dumplings-3_ul6vf9.jpg"],
                 "price": 8.50,
                 "unitOfMeasurement": "Pack (500g)",
                 "optionsGroups": [
@@ -106,8 +106,8 @@
                 "id": "12349101",
                 "title": "Homemade Cutlets",
                 "description": "Juicy and flavorful cutlets — perfect for dinner",
-                "image": "home-bites-homemade-cutlets.jpg",
-                "gallery": ["home-bites-homemade-cutlets-1.jpg", "home-bites-homemade-cutlets-2.jpg", "home-bites-homemade-cutlets-3.jpg"],
+                "image": "/v1747889047/home-bites-homemade-cutlets_nycp1c.jpg",
+                "gallery": ["/v1747889046/home-bites-homemade-cutlets-1_z19p2b.jpg", "/v1747889046/home-bites-homemade-cutlets-2_qc5sj9.jpg", "/v1747889048/home-bites-homemade-cutlets-3_kuyucz.jpg"],
                 "price": 10.00,
                 "unitOfMeasurement": "4 pieces",
                 "optionsGroups": [
@@ -144,8 +144,8 @@
                 "id": "12341121",
                 "title": "Stuffed Pancakes",
                 "description": "Thin pancakes with various fillings — sweet and savory",
-                "image": "home-bites-stuffed-pancakes.jpg",
-                "gallery": ["home-bites-stuffed-pancakes-1.jpg", "home-bites-stuffed-pancakes-2.jpg", "home-bites-stuffed-pancakes-3.jpg"],
+                "image": "/v1747889100/home-bites-stuffed-pancakes_dpyidk.jpg",
+                "gallery": ["/v1747889098/home-bites-stuffed-pancakes-1_ljzvnf.jpg", "/v1747889099/home-bites-stuffed-pancakes-2_qjvqxq.jpg", "/v1747889099/home-bites-stuffed-pancakes-3_jjwcwv.jpg"],
                 "price": 6.50,
                 "unitOfMeasurement": "Pack (4 pcs)",
                 "optionsGroups": [
@@ -182,8 +182,8 @@
                 "id": "12343141",
                 "title": "Cottage Cheese Pancakes",
                 "description": "Classic cottage cheese pancakes, perfect for breakfast",
-                "image": "home-bites-cottage-cheese-pancakes.jpg",
-                "gallery": ["home-bites-cottage-cheese-pancakes-1.jpg", "home-bites-cottage-cheese-pancakes-2.jpg", "home-bites-cottage-cheese-pancakes-3.jpg"],
+                "image": "/v1747889173/home-bites-cottage-cheese-pancakes_oux3bz.jpg",
+                "gallery": ["/v1747889170/home-bites-cottage-cheese-pancakes-1_k8f9n1.jpg", "/v1747889171/home-bites-cottage-cheese-pancakes-2_udicbb.jpg", "/v1747889172/home-bites-cottage-cheese-pancakes-3_gibchs.jpg"],
                 "price": 7.00,
                 "unitOfMeasurement": "4 pieces",
                 "optionsGroups": [
@@ -220,8 +220,8 @@
                 "description": "Thorough cleaning of all rooms: dust, floors, bathroom, kitchen",
                 "price": 120,
                 "unitOfMeasurement": "Service",
-                "image": "clean-space-deep-apartment-cleaning.jpg",
-                "gallery": ["clean-space-deep-apartment-cleaning-1.jpg", "clean-space-deep-apartment-cleaning-2.jpg", "clean-space-deep-apartment-cleaning-3.jpg"],
+                "image": "/v1747889513/clean-space-deep-apartment-cleaning-2_zixhpa.webp",
+                "gallery": ["/v1747889512/clean-space-deep-apartment-cleaning-1_tmppwc.webp", "/v1747889513/clean-space-deep-apartment-cleaning-3_bt6kas.webp", "/v1747889514/clean-space-deep-apartment-cleaning_xdipwm.jpg"],
                 "optionsGroups": [
                     {
                         "id": "56781234123",
@@ -269,8 +269,8 @@
                 "description": "Removal of construction dust, paint stains, and surface cleaning",
                 "price": 200,
                 "unitOfMeasurement": "Service",
-                "image": "clean-space-post-renovation-cleaning.jpg",
-                "gallery": ["clean-space-post-renovation-cleaning-1.jpg", "clean-space-post-renovation-cleaning-2.jpg", "clean-space-post-renovation-cleaning-3.jpg"],
+                "image": "/v1747889565/clean-space-post-renovation-cleaning-1_v0wtx1.webp",
+                "gallery": ["/v1747889565/clean-space-post-renovation-cleaning-2_ch8g9n.webp", "/v1747889568/clean-space-post-renovation-cleaning_mmlqq0.webp", "/v1747889567/clean-space-post-renovation-cleaning-3_ovcxpj.webp"],
                 "optionsGroups": [
                     {
                         "id": "56785678123",
@@ -317,8 +317,8 @@
                 "description": "Routine or one-time office cleaning",
                 "price": 100,
                 "unitOfMeasurement": "Service",
-                "image": "clean-space-office-cleaning.jpg",
-                "gallery": ["clean-space-office-cleaning-1.jpg", "clean-space-office-cleaning-2.jpg", "clean-space-office-cleaning-3.jpg"],
+                "image": "/v1747889614/clean-space-office-cleaning_nqaeob.jpg",
+                "gallery": ["/v1747889611/clean-space-office-cleaning-3_cmpiwu.jpg", "/v1747889608/clean-space-office-cleaning-1_y7coff.jpg", "/v1747889610/clean-space-office-cleaning-2_coiczo.jpg"],
                 "optionsGroups": [
                     {
                         "id": "56789101123",
@@ -371,8 +371,8 @@
                 "description": "Cleaning of sofas, armchairs, and chairs from stains and odors",
                 "price": 50,
                 "unitOfMeasurement": "Service",
-                "image": "clean-space-furniture-dry-cleaning.jpg",
-                "gallery": ["clean-space-furniture-dry-cleaning-1.jpg", "clean-space-furniture-dry-cleaning-2.jpg", "clean-space-furniture-dry-cleaning-3.jpg"],
+                "image": "/v1747889659/clean-space-furniture-dry-cleaning_jsey3u.webp",
+                "gallery": ["/v1747889655/clean-space-furniture-dry-cleaning-1_rcvfrw.webp", "/v1747889658/clean-space-furniture-dry-cleaning-2_ef0npt.png", "/v1747889658/clean-space-furniture-dry-cleaning-3_odj1ik.jpg"],
                 "optionsGroups": [
                     {
                         "id": "56781121123",
@@ -424,8 +424,8 @@
                 "description": "Routine or one-time office cleaning",
                 "price": 100,
                 "unitOfMeasurement": "Service",
-                "image": "handy-fix-office-cleaning.jpg",
-                "gallery": ["handy-fix-office-cleaning-1.jpg", "handy-fix-office-cleaning-2.jpg", "handy-fix-office-cleaning-3.jpg"],
+                "image": "/v1747931105/handy-fix-office-cleaning_c7oyhf.jpg",
+                "gallery": ["/v1747931100/handy-fix-office-cleaning-1_wfuist.jpg", "/v1747931101/handy-fix-office-cleaning-2_zj9zv1.jpg", "/v1747931103/handy-fix-office-cleaning-3_znv92w.jpg"],
                 "optionsGroups": [
                     {
                         "id": "91011234123",
@@ -478,8 +478,8 @@
                 "description": "Removal of construction dust, paint stains, and surface cleaning",
                 "price": 200,
                 "unitOfMeasurement": "Service",
-                "image": "handy-fix-post-renovation-cleaning.jpg",
-                "gallery": ["handy-fix-post-renovation-cleaning-1.jpg", "handy-fix-post-renovation-cleaning-2.jpg", "handy-fix-post-renovation-cleaning-3.jpg"],
+                "image": "/v1747931149/handy-fix-post-renovation-cleaning-1_dnhawg.webp",
+                "gallery": ["/v1747931150/handy-fix-post-renovation-cleaning-2_rp3hqn.webp", "/v1747931152/handy-fix-post-renovation-cleaning-3_sarktk.jpg", "/v1747931153/handy-fix-post-renovation-cleaning_u8udgf.jpg"],
                 "optionsGroups": [
                     {
                         "id": "91015678123",
@@ -526,8 +526,8 @@
                 "description": "Thorough cleaning of all rooms: dust, floors, bathroom, kitchen",
                 "price": 120,
                 "unitOfMeasurement": "Service",
-                "image": "handy-fix-deep-apartment-cleaning.jpg",
-                "gallery": ["handy-fix-deep-apartment-cleaning-1.jpg", "handy-fix-deep-apartment-cleaning-2.jpg", "handy-fix-deep-apartment-cleaning-3.jpg"],
+                "image": "/v1747931201/handy-fix-deep-apartment-cleaning-3_ba6rvj.webp",
+                "gallery": ["/v1747931195/handy-fix-deep-apartment-cleaning-1_y1sfqo.webp", "/v1747931199/handy-fix-deep-apartment-cleaning-2_nz6y9h.jpg", "/v1747931202/handy-fix-deep-apartment-cleaning_ptow1d.webp"],
                 "optionsGroups": [
                     {
                         "id": "91019101123",
@@ -575,8 +575,8 @@
                 "description": "Cleaning of sofas, armchairs, and chairs from stains and odors",
                 "price": 50,
                 "unitOfMeasurement": "Service",
-                "image": "handy-fix-furniture-dry-cleaning.jpg",
-                "gallery": ["handy-fix-furniture-dry-cleaning-1.jpg", "handy-fix-furniture-dry-cleaning-2.jpg", "handy-fix-furniture-dry-cleaning-3.jpg"],
+                "image": "/v1747931246/handy-fix-furniture-dry-cleaning-1_rhtyuy.webp",
+                "gallery": ["/v1747931247/handy-fix-furniture-dry-cleaning-2_ua1hwo.webp", "/v1747931249/handy-fix-furniture-dry-cleaning-3_v1z4xc.webp", "/v1747931251/handy-fix-furniture-dry-cleaning_amzfh5.jpg"],
                 "optionsGroups": [
                     {
                         "id": "91011211123",
@@ -628,8 +628,8 @@
                 "description": "Cleaning after tenants move out, including kitchen and bathroom sanitizing",
                 "price": 150,
                 "unitOfMeasurement": "Service",
-                "image": "crystal-clean-move-out-cleaning.jpg",
-                "gallery": ["crystal-clean-move-out-cleaning-1.jpg", "crystal-clean-move-out-cleaning-2.jpg", "crystal-clean-move-out-cleaning-3.jpg"],
+                "image": "/v1747931296/crystal-clean-move-out-cleaning_cx7klv.jpg",
+                "gallery": ["/v1747931291/crystal-clean-move-out-cleaning-1_p6ytik.jpg", "/v1747931292/crystal-clean-move-out-cleaning-2_dxeioa.webp", "/v1747931294/crystal-clean-move-out-cleaning-3_nhjwyk.jpg"],
                 "optionsGroups": [
                     {
                         "id": "11211234123",
@@ -677,8 +677,8 @@
                 "description": "Professional cleaning of carpets and rugs, removing stains and odors",
                 "price": 70,
                 "unitOfMeasurement": "Service",
-                "image": "crystal-clean-carpet-and-rug-cleaning.jpg",
-                "gallery": ["crystal-clean-carpet-and-rug-cleaning-1.jpg", "crystal-clean-carpet-and-rug-cleaning-2.jpg", "crystal-clean-carpet-and-rug-cleaning-3.jpg"],
+                "image": "/v1747931390/crystal-clean-carpet-and-rug-cleaning-2_oxnyls.jpg",
+                "gallery": ["/v1747931392/crystal-clean-carpet-and-rug-cleaning-3_fwtwy0.webp", "/v1747931393/crystal-clean-carpet-and-rug-cleaning_mmgalu.webp", "/v1747931423/crystal-clean-carpet-and-rug-cleaning-1_p4c6zq.webp"],
                 "optionsGroups": [
                     {
                         "id": "11215678123",
@@ -725,8 +725,8 @@
                 "description": "Cleaning up after parties, including trash removal and surface cleaning",
                 "price": 180,
                 "unitOfMeasurement": "Service",
-                "image": "crystal-clean-post-party-cleaning.jpg",
-                "gallery": ["crystal-clean-post-party-cleaning-1.jpg", "crystal-clean-post-party-cleaning-2.jpg", "crystal-clean-post-party-cleaning-3.jpg"],
+                "image": "/v1747931465/crystal-clean-post-party-cleaning-3_rcyaes.webp",
+                "gallery": ["/v1747931468/crystal-clean-post-party-cleaning_wxhh1t.webp", "/v1747931463/crystal-clean-post-party-cleaning-2_oyhp1c.jpg", "/v1747931462/crystal-clean-post-party-cleaning-1_scmtlc.webp"],
                 "optionsGroups": [
                     {
                         "id": "11219101123",
@@ -774,8 +774,8 @@
                 "description": "Washing and ironing clothes, bed linens, and other laundry items",
                 "price": 30,
                 "unitOfMeasurement": "Service",
-                "image": "crystal-clean-laundry-service.jpg",
-                "gallery": ["crystal-clean-laundry-service-1.jpg", "crystal-clean-laundry-service-2.jpg", "crystal-clean-laundry-service-3.jpg"],
+                "image": "/v1747931509/crystal-clean-laundry-service-2_juik38.jpg",
+                "gallery": ["/v1747931510/crystal-clean-laundry-service-3_te1ufv.jpg", "/v1747931507/crystal-clean-laundry-service-1_ezhm5h.webp", "/v1747931513/crystal-clean-laundry-service_p3iybb.webp"],
                 "optionsGroups": [
                     {
                         "id": "11211211123",
@@ -827,8 +827,8 @@
                 "description": "Professional cleaning for office spaces, including dusting, vacuuming, and trash removal",
                 "price": 200,
                 "unitOfMeasurement": "Service",
-                "image": "pro-cleaning-office-cleaning.jpg",
-                "gallery": ["pro-cleaning-office-cleaning-1.jpg", "pro-cleaning-office-cleaning-2.jpg", "pro-cleaning-office-cleaning-3.jpg"],
+                "image": "/v1747931552/pro-cleaning-office-cleaning-1_m7mgyj.webp",
+                "gallery": ["/v1747931554/pro-cleaning-office-cleaning-2_l3n04l.webp", "/v1747931557/pro-cleaning-office-cleaning-3_a1kw92.jpg", "/v1747931559/pro-cleaning-office-cleaning_upsqwq.jpg"],
                 "optionsGroups": [
                     {
                         "id": "31411234123",
@@ -876,8 +876,8 @@
                 "description": "Cleaning of upholstery including couches and chairs, removing stains and odors",
                 "price": 120,
                 "unitOfMeasurement": "Service",
-                "image": "pro-cleaning-upholstery-cleaning.jpg",
-                "gallery": ["pro-cleaning-upholstery-cleaning-1.jpg", "pro-cleaning-upholstery-cleaning-2.jpg", "pro-cleaning-upholstery-cleaning-3.jpg"],
+                "image": "/v1747931620/pro-cleaning-upholstery-cleaning_fwpind.jpg",
+                "gallery": ["/v1747931614/pro-cleaning-upholstery-cleaning-1_nfmajx.jpg", "/v1747931616/pro-cleaning-upholstery-cleaning-3_acgukz.webp", "/v1747931615/pro-cleaning-upholstery-cleaning-2_dqnl72.webp"],
                 "optionsGroups": [
                     {
                         "id": "31415678123",
@@ -924,8 +924,8 @@
                 "description": "Comprehensive cleaning of all surfaces, floors, and windows for a complete clean",
                 "price": 250,
                 "unitOfMeasurement": "Service",
-                "image": "pro-cleaning-deep-cleaning.jpg",
-                "gallery": ["pro-cleaning-deep-cleaning-1.jpg", "pro-cleaning-deep-cleaning-2.jpg", "pro-cleaning-deep-cleaning-3.jpg"],
+                "image": "/v1747931690/pro-cleaning-deep-cleaning-1_cl45n3.jpg",
+                "gallery": ["/v1747931697/pro-cleaning-deep-cleaning_sst8lr.webp", "/v1747931693/pro-cleaning-deep-cleaning-2_ffmbww.webp", "/v1747931695/pro-cleaning-deep-cleaning-3_we4df7.webp"],
                 "optionsGroups": [
                     {
                         "id": "31419101123",
@@ -973,8 +973,8 @@
                 "description": "Floor cleaning service for tile, wood, and carpeted floors",
                 "price": 100,
                 "unitOfMeasurement": "Service",
-                "image": "pro-cleaning-floor-cleaning.jpg",
-                "gallery": ["pro-cleaning-floor-cleaning-1.jpg", "pro-cleaning-floor-cleaning-2.jpg", "pro-cleaning-floor-cleaning-3.jpg"],
+                "image": "/v1747931744/pro-cleaning-floor-cleaning_raujcx.webp",
+                "gallery": ["/v1747931739/pro-cleaning-floor-cleaning-2_xbuhhj.webp", "/v1747931738/pro-cleaning-floor-cleaning-1_p9b0cz.webp", "/v1747931742/pro-cleaning-floor-cleaning-3_c6mb34.webp"],
                 "optionsGroups": [
                     {
                         "id": "31411211123",

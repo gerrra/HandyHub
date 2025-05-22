@@ -13,7 +13,7 @@ import { ReactComponent as Close } from '../../../../global/icons/close.svg';
 import classnames from 'classnames';
 import { Slider } from '../../../../global/components/slider/slider';
 import 'react-toastify/dist/ReactToastify.css';
-import { useMutationObserver } from '../../../../global/service/globalService';
+import { smartImageCloudinary, useMutationObserver } from '../../../../global/service/globalService';
 import { maxWidth640 } from '../../../../global/service/windowWidth';
 import { SelectSocialNetwork } from '../../../../global/components/selectSocialNetwork/selectSocialNetwork';
 import { OfferOption } from '../../../models/offerOption';
@@ -44,16 +44,6 @@ export const OfferView = () => {
             });
         },
         [brandId, offerId, setOffer],
-    );
-
-    const brandLogoStyles: React.CSSProperties = useMemo(
-        () => ({backgroundImage: `url(/images/${brand?.logo ?? ''})`}),
-        [brand?.logo],
-    );
-
-    const imageStyles: React.CSSProperties = useMemo(
-        () => ({backgroundImage: `url(/images/${offer?.image ?? ''})`}),
-        [offer?.image],
     );
 
     const changeOfferOptionCount = useCallback(
@@ -264,8 +254,9 @@ export const OfferView = () => {
                                             }
                                         </div>
                                     </Link>
-                                    <div
-                                        style={brandLogoStyles}
+                                    <img
+                                        alt={brand.title ?? ''}
+                                        src={smartImageCloudinary(brand?.logo ?? '', 40)}
                                         className='offer-view__brand-logo'
                                     />
                                 </>
@@ -462,7 +453,7 @@ export const OfferView = () => {
                                                 offAutoSlide={!selectedGallery}
                                                 slides={[...offer.gallery.map((image: string, index: number) => ({
                                                     component: <></>,
-                                                    backgroundImage: image,
+                                                    image: image,
                                                 }))]}
                                                 hideDots
                                             />
@@ -472,8 +463,9 @@ export const OfferView = () => {
                             ]}
                         />
                     </div>
-                    <div
-                        style={imageStyles}
+                    <img
+                        alt={offer.title ?? ''}
+                        src={smartImageCloudinary(offer?.image ?? '', sliderWrapRef.current?.clientWidth ?? 100)}
                         className='offer-view__content-image'
                     />
                 </div>

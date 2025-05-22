@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export type SliderItemType = {
     component: ReactNode;
     link?: string;
-    backgroundImage?: string;
+    image?: string;
     selected: boolean;
     stop: boolean;
 };

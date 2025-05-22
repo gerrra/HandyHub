@@ -3,13 +3,9 @@ import { BrandItemProps } from '../../../types/brandItemProps';
 import { Links } from '../../../../global/emuns/links';
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { smartImageCloudinary } from '../../../../global/service/globalService';
 
 export const BrandListItem = (props: BrandItemProps) => {
-    const logoStyles: React.CSSProperties = useMemo(
-        () => ({backgroundImage: `url(/images/${props.item.logo})`}),
-        [props.item.logo],
-    );
-
     const brandItemLink: string = useMemo(
         () => (`${Links.BRAND}/${props.item.id}`),
         [props.item.id],
@@ -29,11 +25,12 @@ export const BrandListItem = (props: BrandItemProps) => {
                             props.item.title ?? ''
                         }
                     </h1>
-                    <div
-                        style={logoStyles}
+                    <img
+                        alt={props.item.title ?? ''}
+                        src={smartImageCloudinary(props.item.logo ?? '', 50)}
                         className='brand-list-item__logo'
                     >
-                    </div>
+                    </img>
                 </div>
                 {
                     !!props.item.brandShortDescription &&
